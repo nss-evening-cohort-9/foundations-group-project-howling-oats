@@ -87,4 +87,7 @@ const submitEvent = () => {
         alert('your response has been received');
     });
 };
+
+const init = () => {
 submitEvent();
+};
