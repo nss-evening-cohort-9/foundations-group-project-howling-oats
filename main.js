@@ -37,48 +37,54 @@ attendees: ['Mary', 'Daniel', 'Mark', 'Ebeneezer']
         }
 ];
 
-const beer = [
-    {
-        title: 'Vintage T Shirt',
-        image: url('vintageShirt.png'),
-        merchandise: 'Shirt',
-        price: '$20.00',
-        },
-        {
-        title: 'Exclusive Variety Six Pack',
-        image: url('https://www.wegmans.com/content/dam/wegmans/products/560/20560.jpg'),
-        merchandise: 'Six Pack',
-        price: '$10.00',
-        },
-        {
-        title: 'Beer Hat',
-        image: url('https://images-na.ssl-images-amazon.com/images/I/71PjjenZxdL._SL1500_.jpg'),
-        merchandise: 'picture of item',
-        price: '$15.00',
-        },
-        {
-        title: 'Bar Key',
-        image: url('https://i.etsystatic.com/13657333/d/il/b5dcbd/1202095436/il_340x270.1202095436_8me5.jpg?version=0'),
-        merchandise: 'Bar Key',
-        price: '$20.00',
-        },
-        {
-        title: 'Pint Glass',
-        image: url('https://images.crateandbarrel.com/is/image/Crate/PintTumblerWCrownSHS16/?$web_product_hero$&160203172057&wid=625&hei=625'),
-        merchandise: 'Glass',
-        price: '$12.00',
-        },
-        {
-        title: 'Coffee Mug',
-        image: url('https://i.pinimg.com/236x/64/de/7a/64de7abcd9b031bd3eac82badde2a038--the-coffee-coffee-mugs.jpg'),
-        merchandise: 'Mug',
-        price: '$8.00',
-    },
-]
+// const beer = [
+//     {
+//         title: 'Vintage T Shirt',
+//         image: url('vintageShirt.png'),
+//         merchandise: 'Shirt',
+//         price: '$20.00',
+//         },
+//         {
+//         title: 'Exclusive Variety Six Pack',
+//         image: url('https://www.wegmans.com/content/dam/wegmans/products/560/20560.jpg'),
+//         merchandise: 'Six Pack',
+//         price: '$10.00',
+//         },
+//         {
+//         title: 'Beer Hat',
+//         image: url('https://images-na.ssl-images-amazon.com/images/I/71PjjenZxdL._SL1500_.jpg'),
+//         merchandise: 'picture of item',
+//         price: '$15.00',
+//         },
+//         {
+//         title: 'Bar Key',
+//         image: url('https://i.etsystatic.com/13657333/d/il/b5dcbd/1202095436/il_340x270.1202095436_8me5.jpg?version=0'),
+//         merchandise: 'Bar Key',
+//         price: '$20.00',
+//         },
+//         {
+//         title: 'Pint Glass',
+//         image: url('https://images.crateandbarrel.com/is/image/Crate/PintTumblerWCrownSHS16/?$web_product_hero$&160203172057&wid=625&hei=625'),
+//         merchandise: 'Glass',
+//         price: '$12.00',
+//         },
+//         {
+//         title: 'Coffee Mug',
+//         image: url('https://i.pinimg.com/236x/64/de/7a/64de7abcd9b031bd3eac82badde2a038--the-coffee-coffee-mugs.jpg'),
+//         merchandise: 'Mug',
+//         price: '$8.00',
+//     },
+// ]
 
-console.log(events[0].description);
+// console.log(events[0].description);
 
+const clearFormInput = () => {
+    document.getElementById('nameInput').value = '';
+    document.getElementById('emailInput').value = '';
+};
 const submitEvent = () => {
-    document.getElementById('submitButton').addEventListener('click', alert('Your email has been recorded') );
+    document.getElementById('submitButton').addEventListener('click',function (e) {
+        alert('your response has been received');
+    });
 };
 submitEvent();
