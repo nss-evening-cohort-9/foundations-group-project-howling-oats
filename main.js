@@ -100,7 +100,7 @@ const buyBeerCardBuilder = () => {
         domString += `<h2>${beer.description}</h2>`
         domString += `<h2>${beer.price}</h2>`
         domString += `<footer = 'footer'>`
-        domString += `    <a class="btn btn-danger addBtn" id =${beer.id}>Add</a>`;
+        domString += ` <button ="btn btn-danger addBtn" id =${beer.id}>Add</button>`;
         domString += `</footer>`
         domString += `</div>`
 
