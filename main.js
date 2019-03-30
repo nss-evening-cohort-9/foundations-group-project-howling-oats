@@ -38,7 +38,6 @@ const events = [{
 ];
 
 
-const beer = [{
 // beer data
 const beers = [
     {
@@ -87,7 +86,7 @@ const eventsCardBuilder = () => {
 
     domString += `<div class="row">`;
     events.forEach((event) => {
-
+domString += `<div class="col-sm-12 col-md-8 col-lg-6">`;
         domString += `<div class="card events-card">`;
         domString += `<img class="card-img-top events-img" src="${event.image}" alt="Image of ${event.imageAlt}">`;
         domString += `<div class="card-body">`;
@@ -109,10 +108,11 @@ const eventsCardBuilder = () => {
         domString += `</p>`;
         domString += `</div>`;
         domString += `</div>`;
-
+domString += `</div>`;
     })
     domString += `</div>`;
-    printToDom('events', domString);
+    console.log(domString);
+    printToDom('eventsPage', domString);
 };
 
 
@@ -151,6 +151,7 @@ const buyBeerCardBuilder = () => {
 
 
 const init = () => {
+    eventsCardBuilder();
     buyBeerCardBuilder();
 }
 
