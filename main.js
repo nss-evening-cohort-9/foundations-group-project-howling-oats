@@ -1,4 +1,4 @@
-
+//array of objects with info about events
 const events = [
 {
 name: 'Clockwork Tasting',
@@ -16,7 +16,7 @@ image: './images/bottle-picture.png',
 imageAlt: 'Image of several bottles, each a different color and haunted by a very nice spirit',
 date: '10/31/2019',
 address: '123 The Other Way, Ghost-hosting Room, Nashville, 37211',
-attendees['Mary', 'Daniel', 'Mark', 'Ebeneezer']
+attendees: ['Mary', 'Daniel', 'Mark', 'Ebeneezer']
 },
 {
     name: 'Echo\'s SpokenWord',
@@ -25,14 +25,15 @@ attendees['Mary', 'Daniel', 'Mark', 'Ebeneezer']
     imageAlt: 'Image of our handheld mirror, with silver embroidery around the edge. Not magical in the least.',
     date: '05/01/2019',
     address: '123 The Other Way, Room Of Disappearance, Nashville, 37211',
-    attendees['Mary', 'Daniel', 'Mark', 'Anastasia']
+    attendees: ['Mary', 'Daniel', 'Mark', 'Anastasia']
     },{
         name: 'Nashville Bar Festival',
-        image: ,
-        imageAlt: ,
-        date: ,
-        address: ,
-        attendees[]
+        description: 'A perfectly ordinary, humdrum bar festival in which we are the only shining beacon of hope.',
+        image: 'https://media.timeout.com/images/103932506/630/472/image.jpg',
+        imageAlt: 'Image of a green sward with people who are more interested in beer than magical occurrences. Stations are arranged about the sward in the in-between light of not quite day, where patrons can obtain beer.',
+        date: '05/15/2019',
+        address: '123 The Other Way, Our Sliver Of Nature, Nashville, 37211',
+        attendees: ['Mary', 'Daniel', 'Mark', 'Sarah']
         }
 ];
 
@@ -74,5 +75,7 @@ const beer = [
         price: '$8.00',
     },
 ]
+
+console.log(events[0].description);
 
 
