@@ -1,3 +1,4 @@
+
 //array of objects with info about events
 const events = [
 {
@@ -37,46 +38,76 @@ attendees: ['Mary', 'Daniel', 'Mark', 'Ebeneezer']
         }
 ];
 
-// const beer = [
-//     {
-//         title: 'Vintage T Shirt',
-//         image: url('vintageShirt.png'),
-//         merchandise: 'Shirt',
-//         price: '$20.00',
-//         },
-//         {
-//         title: 'Exclusive Variety Six Pack',
-//         image: url('https://www.wegmans.com/content/dam/wegmans/products/560/20560.jpg'),
-//         merchandise: 'Six Pack',
-//         price: '$10.00',
-//         },
-//         {
-//         title: 'Beer Hat',
-//         image: url('https://images-na.ssl-images-amazon.com/images/I/71PjjenZxdL._SL1500_.jpg'),
-//         merchandise: 'picture of item',
-//         price: '$15.00',
-//         },
-//         {
-//         title: 'Bar Key',
-//         image: url('https://i.etsystatic.com/13657333/d/il/b5dcbd/1202095436/il_340x270.1202095436_8me5.jpg?version=0'),
-//         merchandise: 'Bar Key',
-//         price: '$20.00',
-//         },
-//         {
-//         title: 'Pint Glass',
-//         image: url('https://images.crateandbarrel.com/is/image/Crate/PintTumblerWCrownSHS16/?$web_product_hero$&160203172057&wid=625&hei=625'),
-//         merchandise: 'Glass',
-//         price: '$12.00',
-//         },
-//         {
-//         title: 'Coffee Mug',
-//         image: url('https://i.pinimg.com/236x/64/de/7a/64de7abcd9b031bd3eac82badde2a038--the-coffee-coffee-mugs.jpg'),
-//         merchandise: 'Mug',
-//         price: '$8.00',
-//     },
-// ]
+// beer data
+const beers = [
+    {
+        title: 'Vintage T Shirt',
+        imageUrl:'https://img.etsystatic.com/il/380a33/1548068326/il_570xN.1548068326_km2w.jpg?version=0',
+        description: 'Shirt',
+        price: '$20.00',
+        },
+        {
+        title: 'Exclusive Variety Six Pack',
+        imageUrl: 'https://www.wegmans.com/content/dam/wegmans/products/560/20560.jpg',
+        description: 'Six Pack',
+        price: '$10.00',
+        },
+        {
+        title: 'Beer Hat',
+        imageUrl:'https://images-na.ssl-images-amazon.com/images/I/71PjjenZxdL._SL1500_.jpg',
+        description: 'picture of item',
+        price: '$15.00',
+        },
+        {
+        title: 'Bar Key',
+        imageUrl:'https://i.etsystatic.com/13657333/d/il/b5dcbd/1202095436/il_340x270.1202095436_8me5.jpg?version=0',
+        description: 'Bar Key',
+        price: '$20.00',
+        },
+        {
+        title: 'Pint Glass',
+        imageUrl:'https://images.crateandbarrel.com/is/image/Crate/PintTumblerWCrownSHS16/?$web_product_hero$&160203172057&wid=625&hei=625',
+        description: 'Glass',
+        price: '$12.00',
+        },
+        {
+        title: 'Coffee Mug',
+        imageUrl:'https://i.pinimg.com/236x/64/de/7a/64de7abcd9b031bd3eac82badde2a038--the-coffee-coffee-mugs.jpg',
+        description: 'Mug',
+        price: '$8.00',
+    },
+]
 
-// console.log(events[0].description);
+//end of beer data
+
+//printToDom function
+const printToDom = (divId, textToPrint) => {
+    const selectedDiv = document.getElementById(divId);
+    selectedDiv.innerHTML = textToPrint;
+};
+// end printToDom function
+
+
+// Start of beer card builder
+const buyBeerCardBuilder = () => {
+    let domString = '';
+    beers.forEach((beer) => {
+        console.log(beer);
+        domString += `<div = 'card'>`
+        domString += `<h2 class = 'header'>${beer.title}</h2>`
+        domString += `<img class="card-img-top" src="${beer.imageUrl}" alt="Card image cap">`
+        domString += `<h2>${beer.description}</h2>`
+        domString += `<h2>${beer.price}</h2>`
+        domString += `<footer = 'footer'>`
+        domString += ` <button ="btn btn-danger addBtn" id =${beer.id}>Add</button>`;
+        domString += `</footer>`
+        domString += `</div>`
+
+    });
+    printToDom('beer-page', domString)
+    console.log(domString);
+}
+// end of beer card builder
 
 const clearFormInput = () => {
     document.getElementById('nameInput').value = '';
@@ -90,4 +121,6 @@ const submitEvent = () => {
 
 const init = () => {
 submitEvent();
+buyBeerCardBuilder();
 };
+init();
