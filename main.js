@@ -78,4 +78,7 @@ const beer = [
 
 console.log(events[0].description);
 
-
+const submitEvent = () => {
+    document.getElementById('submitButton').addEventListener('click', alert('Your email has been recorded') );
+};
+submitEvent();
