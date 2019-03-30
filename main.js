@@ -38,7 +38,7 @@ attendees: ['Mary', 'Daniel', 'Mark', 'Ebeneezer']
         }
 ];
 // beer data
-const beer = [
+const beers = [
     {
         title: 'Vintage T Shirt',
         imageUrl:'https://img.etsystatic.com/il/380a33/1548068326/il_570xN.1548068326_km2w.jpg?version=0',
@@ -79,24 +79,34 @@ const beer = [
 
 //end of beer data
 
+//printToDom function
+const printToDom = (divId, textToPrint) => {
+    const selectedDiv = document.getElementById(divId);
+    selectedDiv.innerHTML = textToPrint;
+};
+
+// end printToDom function
+
+
 // Start of beer card builder
 
 const buyBeerCardBuilder = () => {
     let domString = '';
-    beers.forEach(beer => {
+    beers.forEach((beer) => {
+        console.log(beer);
         domString += `<div = 'card'>`
-        domString += `<h1 class = 'header>${beer.title}</h1>`
+        domString += `<h2 class = 'header'>${beer.title}</h2>`
         domString += `<img class="card-img-top" src="${beer.imageUrl}" alt="Card image cap">`
-        domString += `<h2>${beer.description}>`
-        domString += `<h2>${beer.price}>`
-        domString += `<div = 'footer'>`
+        domString += `<h2>${beer.description}</h2>`
+        domString += `<h2>${beer.price}</h2>`
+        domString += `<footer = 'footer'>`
         domString += `    <a class="btn btn-danger addBtn" id =${beer.id}>Add</a>`;
         domString += `</footer>`
         domString += `</div>`
 
     });
-
     printToDom('beer-page', domString)
+    console.log(domString);
 
 }
 
@@ -104,3 +114,8 @@ const buyBeerCardBuilder = () => {
 
 console.log(events[0].description);
 
+const init = () => {
+    buyBeerCardBuilder();
+}
+
+init();
