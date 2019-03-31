@@ -130,7 +130,7 @@ const generateCartList = () => {
 
     productsInCart.forEach(function(item) {
       const li = document.createElement("li");
-      li.innerHTML = `${item.quantity} ${item.product.name} - $${item.product.price * item.quantity}`;
+      li.innerHTML = `${beer.quantity} ${item.product.name} - $${item.product.price * item.quantity}`;
       cartEl.appendChild(li);
     });
 
@@ -172,7 +172,7 @@ const generateCartList = () => {
 
   // Adds new items or updates existing one in productsInCart array
   const addToCart = (id) =>  {
-    const obj = products[id];
+    const obj = beer[id];
     if(productsInCart.length === 0 || productFound(obj.id) === undefined) {
       productsInCart.push({product: obj, quantity: 1});
     } else {
@@ -184,7 +184,6 @@ const generateCartList = () => {
     }
     generateCartList();
   }
-
 
   // This function checks if project is already in productsInCart array
   const productFound = (productId) => {
@@ -218,3 +217,24 @@ setupListeners();
 };
 
 init();
+
+// var generateProductList = function() {
+//     products.forEach(function(item) {
+//       var productEl = document.createElement("div");
+//       productEl.className = "product";
+//       productEl.innerHTML = `<div class="product-image">
+//                                 <img src="${item.imageUrl}" alt="${item.name}">
+//                              </div>
+//                              <div class="product-name"><span>Product:</span> ${item.name}</div>
+//                              <div class="product-description"><span>Description:</span> ${item.description}</div>
+//                              <div class="product-price"><span>Price:</span> ${item.price} $</div>
+//                              <div class="product-add-to-cart">
+//                                <a href="#0" class="button see-more">More Details</a>
+//                                <a href="#0" class="button add-to-cart" data-id=${item.id}>Add to Cart</a>
+//                              </div>
+//                           </div>
+// `;
+
+// productsEl.appendChild(productEl);
+//     });
+//   }
