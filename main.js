@@ -154,7 +154,6 @@ const buyBeerCardBuilder = () => {
 
     });
     printToDom('beer-page', domString)
-    console.log(domString);
 }
 // end of beer card builder
 
