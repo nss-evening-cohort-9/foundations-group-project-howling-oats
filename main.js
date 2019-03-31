@@ -37,6 +37,7 @@ attendees: ['Mary', 'Daniel', 'Mark', 'Ebeneezer']
         attendees: ['Mary', 'Daniel', 'Mark', 'Sarah']
         }
 ];
+
 // beer data
 const beers = [
     {
@@ -84,12 +85,10 @@ const printToDom = (divId, textToPrint) => {
     const selectedDiv = document.getElementById(divId);
     selectedDiv.innerHTML = textToPrint;
 };
-
 // end printToDom function
 
 
 // Start of beer card builder
-
 const buyBeerCardBuilder = () => {
     let domString = '';
     beers.forEach((beer) => {
@@ -107,15 +106,21 @@ const buyBeerCardBuilder = () => {
     });
     printToDom('beer-page', domString)
     console.log(domString);
-
 }
-
 // end of beer card builder
 
-console.log(events[0].description);
+const clearFormInput = () => {
+    document.getElementById('nameInput').value = '';
+    document.getElementById('emailInput').value = '';
+};
+const submitEvent = () => {
+    document.getElementById('submitButton').addEventListener('click',function (e) {
+        alert('your response has been received');
+    });
+};
 
 const init = () => {
-    buyBeerCardBuilder();
-}
-
+submitEvent();
+buyBeerCardBuilder();
+};
 init();
