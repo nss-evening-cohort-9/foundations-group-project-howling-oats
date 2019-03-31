@@ -2,7 +2,7 @@ body {
     background-color: blanchedalmond;
 }
 
-.card {
+.beer-card{
     width: 40%;
     box-shadow:10px 10px 5px;
     border: 1px solid lightblue;
@@ -12,7 +12,7 @@ body {
     padding: 10%;
 }
 
-.card-img-top {
+.beer-card-img-top {
         display: flex;
         justify-content: center;
         height: 500px;

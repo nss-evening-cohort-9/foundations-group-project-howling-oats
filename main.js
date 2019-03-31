@@ -37,27 +37,41 @@ attendees: ['Mary', 'Daniel', 'Mark', 'Ebeneezer']
         attendees: ['Mary', 'Daniel', 'Mark', 'Sarah']
         }
 ];
+
+// definitions
+const ShoppingCart = (function($) {
+    "use strict";
+
+    // definition DOM Elements
+    const productsEl = document.querySelector(".products");
+    const cartEl = document.querySelector(".shopping-cart-list");
+    const productQuantityEl = document.querySelector(".product-quantity");
+    const emptyCartEl = document.querySelector(".empty-cart-btn");
+    const cartCheckoutEl = document.querySelector(".cart-checkout");
+    const totalPriceEl = document.querySelector(".total-price");
+
+    // end of definitions
 // beer data
 const beers = [
-    {
-        title: 'Vintage T Shirt',
-        imageUrl:'https://img.etsystatic.com/il/380a33/1548068326/il_570xN.1548068326_km2w.jpg?version=0',
-        description: 'Shirt',
-        price: '$20.00',
-        },
-        {
-        title: 'Exclusive Variety Six Pack',
-        imageUrl: 'https://www.wegmans.com/content/dam/wegmans/products/560/20560.jpg',
-        description: 'Six Pack',
-        price: '$10.00',
-        },
-        {
-        title: 'Beer Hat',
-        imageUrl:'https://images-na.ssl-images-amazon.com/images/I/71PjjenZxdL._SL1500_.jpg',
-        description: 'picture of item',
-        price: '$15.00',
-        },
-        {
+{
+    title: 'Vintage T Shirt',
+    imageUrl:'https://img.etsystatic.com/il/380a33/1548068326/il_570xN.1548068326_km2w.jpg?version=0',
+    description: 'Shirt',
+    price: '$20.00',
+},
+{
+    title: 'Exclusive Variety Six Pack',
+    imageUrl: 'https://www.wegmans.com/content/dam/wegmans/products/560/20560.jpg',
+    description: 'Six Pack',
+    price: '$10.00',
+},
+{
+    title: 'Beer Hat',
+    imageUrl:'https://images-na.ssl-images-amazon.com/images/I/71PjjenZxdL._SL1500_.jpg',
+    description: 'hat',
+    price: '$15.00',
+},
+{
         title: 'Bar Key',
         imageUrl:'https://i.etsystatic.com/13657333/d/il/b5dcbd/1202095436/il_340x270.1202095436_8me5.jpg?version=0',
         description: 'Bar Key',
@@ -77,6 +91,8 @@ const beers = [
     },
 ]
 
+productsInCart = [];
+
 //end of beer data
 
 //printToDom function
@@ -94,13 +110,13 @@ const buyBeerCardBuilder = () => {
     let domString = '';
     beers.forEach((beer) => {
         console.log(beer);
-        domString += `<div = 'card'>`
-        domString += `<h2 class = 'header'>${beer.title}</h2>`
-        domString += `<img class="card-img-top" src="${beer.imageUrl}" alt="Card image cap">`
-        domString += `<h2>${beer.description}</h2>`
-        domString += `<h2>${beer.price}</h2>`
-        domString += `<footer = 'footer'>`
-        domString += ` <button ="btn btn-danger addBtn" id =${beer.id}>Add</button>`;
+        domString += `<div = 'beer-card'>`
+        domString += `<h2 class = 'beerHeader'>${beer.title}</h2>`
+        domString += `<img class="beer-card-img-top" src="${beer.imageUrl}" alt="Card image cap">`
+        domString += `<h2 class = "beerDescription">${beer.description}</h2>`
+        domString += `<h2 class = "beerPrice">${beer.price}</h2>`
+        domString += `<footer class = 'beetFooter'>`
+        domString += ` <button ="addBtn" id =${beer.id}>Add</button>`;
         domString += `</footer>`
         domString += `</div>`
 
@@ -112,10 +128,85 @@ const buyBeerCardBuilder = () => {
 
 // end of beer card builder
 
-console.log(events[0].description);
+const generateCartList = () => {
+    cartEl.innerHTML = "";
+
+    productsInCart.forEach(function(item) {
+      const li = document.createElement("li");
+      li.innerHTML = `${item.quantity} ${item.product.name} - $${item.product.price * item.quantity}`;
+      cartEl.appendChild(li);
+    });
+
+    productQuantityEl.innerHTML = productsInCart.length;
+
+    generateCartButtons()
+  }
+
+
+  // Function that generates Empty Cart and Checkout buttons based on condition that checks if productsInCart array is empty
+  const generateCartButtons = () => {
+    if(productsInCart.length > 0) {
+      emptyCartEl.style.display = "block";
+      cartCheckoutEl.style.display = "block"
+      totalPriceEl.innerHTML = "$ " + calculateTotalPrice();
+    } else {
+      emptyCartEl.style.display = "none";
+      cartCheckoutEl.style.display = "none";
+    }
+  }
+
+  // Setting up listeners for click event on all products and Empty Cart button as well
+  const setupListeners = () =>  {
+    productsEl.addEventListener("click", function(e) {
+      const el = e.target;
+      if(el.classList.contains("add-to-cart")) {
+       const elId = el.dataset.id;
+       addToCart(elId);
+      }
+    });
+
+    emptyCartEl.addEventListener("click", function(e) {
+      if(confirm("Are you sure?")) {
+        productsInCart = [];
+      }
+      generateCartList();
+    });
+  }
+
+  // Adds new items or updates existing one in productsInCart array
+  const addToCart = (id) =>  {
+    const obj = products[id];
+    if(productsInCart.length === 0 || productFound(obj.id) === undefined) {
+      productsInCart.push({product: obj, quantity: 1});
+    } else {
+      productsInCart.forEach(function(item) {
+        if(item.product.id === obj.id) {
+          item.quantity++;
+        }
+      });
+    }
+    generateCartList();
+  }
+
+
+  // This function checks if project is already in productsInCart array
+  const productFound = (productId) => {
+    return productsInCart.find(function(item) {
+      return item.product.id === productId;
+    });
+  }
+
+  const calculateTotalPrice = () => {
+    return productsInCart.reduce(function(total, item) {
+      return total + (item.product.price *  item.quantity);
+    }, 0);
+  }
+
+// console.log(events[0].description);
 
 const init = () => {
     buyBeerCardBuilder();
+    generateProductList();
+    setupListeners();
 }
-
 init();
