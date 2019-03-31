@@ -92,7 +92,6 @@ const printToDom = (divId, textToPrint) => {
 const buyBeerCardBuilder = () => {
     let domString = '';
     beers.forEach((beer) => {
-        console.log(beer);
         domString += `<div = 'card'>`
         domString += `<h2 class = 'header'>${beer.title}</h2>`
         domString += `<img class="card-img-top" src="${beer.imageUrl}" alt="Card image cap">`
@@ -105,7 +104,6 @@ const buyBeerCardBuilder = () => {
 
     });
     printToDom('beer-page', domString)
-    console.log(domString);
 }
 // end of beer card builder
 
