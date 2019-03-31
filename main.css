@@ -22,6 +22,9 @@ body {
         display: block;
         margin-top: 10px;
 }
+.hideStuff{
+    display: none;
+}
 
 .beer-container {
     display: flex;
