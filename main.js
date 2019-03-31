@@ -1,41 +1,40 @@
 
 //array of objects with info about events
-const events = [
-{
-name: 'Clockwork Tasting',
-description: 'We will serve you disturbingly tiny glasses of beer, but many of them, in the surprisingly capacious workings of our grandfather clock. The door is in the back.',
-image: 'https://www.theclockdepot.com/images/D/Corner-Grandfather-Clock-611-252-HR.jpg',
-imageAlt: 'Image of our grandfather clock, which put in an appearance this afternoon',
-date: '04/26/2019',
-address: '123 The Other Way, Nook Grandfather Clock, Nashville, 37211',
-attendees: ['Mary', 'Daniel', 'Mark', 'James Hook']
-},
-{
-name: 'The Haunted Bottles One-Night Smash',
-description: 'Join us for a night of ghostly music. If you\'ve never heard a ghost sing from a bottle, this event is for you. Also door prizes!',
-image: './images/bottle-picture.png',
-imageAlt: 'Image of several bottles, each a different color and haunted by a very nice spirit',
-date: '10/31/2019',
-address: '123 The Other Way, Ghost-hosting Room, Nashville, 37211',
-attendees: ['Mary', 'Daniel', 'Mark', 'Ebeneezer']
-},
-{
-    name: 'Echo\'s SpokenWord',
-    description: 'An "open mirror" night, in which you speak heartfelt poetry to our mirror and your words are echoed back to you. Your reflection is definitely not alive.',
-    image: 'https://www.t2day.com/ebay/Vanity_Makeup_Mirror/Hand_Held_Mirror/Vintage_Antique_Style_Girls_Princess_Oval_Roune_Vanity_Makeup_Hand_Held_Mirror_Silver_Small_01.jpg',
-    imageAlt: 'Image of our handheld mirror, with silver embroidery around the edge. Not magical in the least.',
-    date: '05/01/2019',
-    address: '123 The Other Way, Room Of Disappearance, Nashville, 37211',
-    attendees: ['Mary', 'Daniel', 'Mark', 'Anastasia']
-    },{
+const events = [{
+        name: 'Clockwork Tasting',
+        description: 'We will serve you disturbingly tiny glasses of beer, but many of them, in the surprisingly capacious workings of our grandfather clock. The door is in the back.',
+        image: 'https://www.theclockdepot.com/images/D/Corner-Grandfather-Clock-611-252-HR.jpg',
+        imageAlt: 'our grandfather clock, which put in an appearance this afternoon',
+        date: '04/26/2019',
+        address: '123 The Other Way, Nook Grandfather Clock, Nashville, 37211',
+        attendees: ['Mary', 'Daniel', 'Mark', 'James Hook']
+    },
+    {
+        name: 'The Haunted Bottles One-Night Smash',
+        description: 'Join us for a night of ghostly music. If you\'ve never heard a ghost sing from a bottle, this event is for you. Also door prizes!',
+        image: 'https://img3.exportersindia.com/product_images/bc-full/dir_8/239027/glass-bottles-104292.jpg',
+        imageAlt: 'fifteen bottles in a variety of shapes and colors, each haunted by a very nice spirit',
+        date: '10/31/2019',
+        address: '123 The Other Way, Ghost-hosting Room, Nashville, 37211',
+        attendees: ['Mary', 'Daniel', 'Mark', 'Ebeneezer']
+    },
+    {
+        name: 'Echo\'s SpokenWord',
+        description: 'An "open mirror" night, in which you speak heartfelt poetry to our mirror and your words are echoed back to you. Your reflection is definitely not alive.',
+        image: 'https://www.t2day.com/ebay/Vanity_Makeup_Mirror/Hand_Held_Mirror/Vintage_Antique_Style_Girls_Princess_Oval_Roune_Vanity_Makeup_Hand_Held_Mirror_Silver_Small_01.jpg',
+        imageAlt: 'our handheld mirror, with silver embroidery around the edge. Not magical in the least.',
+        date: '05/01/2019',
+        address: '123 The Other Way, Room Of Disappearance, Nashville, 37211',
+        attendees: ['Mary', 'Daniel', 'Mark', 'Anastasia']
+    }, {
         name: 'Nashville Bar Festival',
         description: 'A perfectly ordinary, humdrum bar festival in which we are the only shining beacon of hope.',
         image: 'https://media.timeout.com/images/103932506/630/472/image.jpg',
-        imageAlt: 'Image of a green sward with people who are more interested in beer than magical occurrences. Stations are arranged about the sward in the in-between light of not quite day, where patrons can obtain beer.',
+        imageAlt: 'a green sward with people who are more interested in beer than magical occurrences. Stations are arranged about the sward in the in-between light of not quite day, where patrons can obtain beer.',
         date: '05/15/2019',
         address: '123 The Other Way, Our Sliver Of Nature, Nashville, 37211',
         attendees: ['Mary', 'Daniel', 'Mark', 'Sarah']
-        }
+    }
 ];
 
 // definitions
@@ -95,6 +94,42 @@ productsInCart = [];
 
 //end of beer data
 
+const eventsCardBuilder = () => {
+    let domString   = '';
+    domString += `<div class="events-title-container row">`;
+    domString += `<h2>Our Events</h2>`;
+    domString += `</div>`;
+
+    domString += `<div class="row">`;
+    events.forEach((event) => {
+domString += `<div class="col-sm-12 col-md-8 col-lg-6">`;
+        domString += `<div class="card events-card">`;
+        domString += `<img class="card-img-top events-img" src="${event.image}" alt="Image of ${event.imageAlt}">`;
+        domString += `<div class="card-body">`;
+        domString += `<h5 class="card-title events-card-title">${event.name}</h5>`;
+        domString += `<p class="card-text events-card-description">${event.description}</p>`;
+        domString += `<p class="card-text events-card-date"><span class='bold-text'>When</span>: ${event.date}</p>`;
+        domString += `<p class="card-text event-address"><span class='bold-text'>Where</span>: ${event.address}</p>`;
+        domString += `<div class="card-footer">`;
+        domString += `<p class="card-text event-attendees"><span class='bold-text'>Patrons Definitely Attending</span></p>`;
+        domString += `<p class="card-text">`;
+        event.attendees.forEach((attendee, index) => {
+            if (index < event.attendees.length - 1) {
+                domString += `${attendee}, `;
+            } else {
+                domString += `${attendee}`;
+            }
+        })
+        domString += `</p>`;
+        domString += `</div>`;
+        domString += `</div>`;
+domString += `</div>`;
+    })
+    domString += `</div>`;
+    printToDom('eventsPage', domString);
+};
+
+
 //printToDom function
 const printToDom = (divId, textToPrint) => {
     const selectedDiv = document.getElementById(divId);
@@ -107,7 +142,6 @@ const printToDom = (divId, textToPrint) => {
 const buyBeerCardBuilder = () => {
     let domString = '';
     beers.forEach((beer) => {
-        console.log(beer);
         domString += `<div = 'beer-card'>`
         domString += `<h2 class = 'beerHeader'>${beer.title}</h2>`
         domString += `<img class="beer-card-img-top" src="${beer.imageUrl}" alt="Card image cap">`
@@ -116,7 +150,7 @@ const buyBeerCardBuilder = () => {
         domString += `<footer class = 'beetFooter'>`
         domString += ` <button ="addBtn" id =${beer.id}>Add</button>`;
         domString += `</footer>`
-        domString += `</div>`
+        domString += `</div>`;
 
     });
     printToDom('beer-page', domString)
@@ -209,9 +243,11 @@ const submitEvent = () => {
     });
 };
 
+
 const init = () => {
-submitEvent();
+eventsCardBuilder();
 buyBeerCardBuilder();
+submitEvent();
 setupListeners();
 ShoppingCart();
 };
