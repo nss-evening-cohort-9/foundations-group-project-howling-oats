@@ -2,7 +2,7 @@ body {
     background-color: blanchedalmond;
 }
 
-.card {
+/* .card {
     width: 40%;
     box-shadow:10px 10px 5px;
     border: 1px solid lightblue;
@@ -29,4 +29,6 @@ body {
 .beer-container {
     display: flex;
     flex-wrap: wrap;
-}
+} */
+
+
