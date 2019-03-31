@@ -39,9 +39,9 @@ attendees: ['Mary', 'Daniel', 'Mark', 'Ebeneezer']
 ];
 
 // definitions
-const ShoppingCart = (function($) {
+const ShoppingCart = () => {
     "use strict";
-
+}
     // definition DOM Elements
     const productsEl = document.querySelector(".products");
     const cartEl = document.querySelector(".shopping-cart-list");
