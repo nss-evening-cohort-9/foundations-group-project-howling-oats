@@ -53,42 +53,42 @@ const beers = [
     id: 1,
     imageUrl:'https://img.etsystatic.com/il/380a33/1548068326/il_570xN.1548068326_km2w.jpg?version=0',
     description: 'Shirt',
-    price: '$20.00',
+    price: '20',
 },
     {
     title: 'Exclusive Variety Six Pack',
     id: 2,
     imageUrl: 'https://www.wegmans.com/content/dam/wegmans/products/560/20560.jpg',
     description: 'Six Pack',
-    price: '$10.00',
+    price: '10',
 },
     {
     title: 'Beer Hat',
     id: 3,
     imageUrl:'https://images-na.ssl-images-amazon.com/images/I/71PjjenZxdL._SL1500_.jpg',
     description: 'hat',
-    price: '$15.00',
+    price: '15',
 },
     {
     title: 'Bar Key',
     id: 4,
     imageUrl:'https://i.etsystatic.com/13657333/d/il/b5dcbd/1202095436/il_340x270.1202095436_8me5.jpg?version=0',
     description: 'Bar Key',
-    price: '$20.00',
+    price: '20',
 },
     {
     title: 'Pint Glass',
     id: 5,
     imageUrl:'https://images.crateandbarrel.com/is/image/Crate/PintTumblerWCrownSHS16/?$web_product_hero$&160203172057&wid=625&hei=625',
     description: 'Glass',
-    price: '$12.00',
+    price: '12',
 },
     {
     title: 'Coffee Mug',
     id: 6,
     imageUrl:'https://i.pinimg.com/236x/64/de/7a/64de7abcd9b031bd3eac82badde2a038--the-coffee-coffee-mugs.jpg',
     description: 'Mug',
-    price: '$8.00',
+    price: '8',
     },
 ]
 
@@ -148,7 +148,7 @@ const buyBeerCardBuilder = () => {
         domString += `<h2 class = 'beerHeader'>${beer.title}</h2>`
         domString += `<img class="beer-card-img-top" src="${beer.imageUrl}" alt="Card image cap">`
         domString += `<h2 class = "beerDescription">${beer.description}</h2>`
-        domString += `<h2 class = "beerPrice">${beer.price}</h2>`
+        domString += `<h2 class = "beerPrice"> $ ${beer.price}.00</h2>`
         domString += `<footer class = 'beetFooter'>`
         domString += ` <button class="add-to-cart" id =${beer.id}>Add to Cart</button>`;
         domString += `</footer>`
