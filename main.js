@@ -227,7 +227,7 @@ const generateCartList = () => {
   const productFound = (productId) => {
       console.log(productId);
     return productsInCart.find(function(item) {
-      return item.beer.id === productId;
+      return item.product.id === productId;
     });
   }
 
