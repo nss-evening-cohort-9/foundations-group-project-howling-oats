@@ -2,6 +2,7 @@ body {
     background-color: blanchedalmond;
 }
 
+/* start of buy beer */
 .beer-card{
     width: 40%;
     box-shadow:10px 10px 5px;
@@ -68,5 +69,7 @@ body {
   .cart-checkout {
     background: limegreen;
   }
+
+  /* end of buy beer styling */
 
 
