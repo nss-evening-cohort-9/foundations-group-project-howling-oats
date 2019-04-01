@@ -1,4 +1,3 @@
-
 //array of objects with info about events
 const events = [{
         name: 'Clockwork Tasting',
@@ -38,10 +37,9 @@ const events = [{
 ];
 
 // beer data
-const beers = [
-    {
+const beers = [{
         title: 'Vintage T Shirt',
-        imageUrl:'https://img.etsystatic.com/il/380a33/1548068326/il_570xN.1548068326_km2w.jpg?version=0',
+        imageUrl: 'https://img.etsystatic.com/il/380a33/1548068326/il_570xN.1548068326_km2w.jpg?version=0',
         description: 'Shirt',
         price: '$20.00',
     },
@@ -53,39 +51,39 @@ const beers = [
     },
     {
         title: 'Beer Hat',
-        imageUrl:'https://images-na.ssl-images-amazon.com/images/I/71PjjenZxdL._SL1500_.jpg',
+        imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/71PjjenZxdL._SL1500_.jpg',
         description: 'picture of item',
         price: '$15.00',
     },
     {
         title: 'Bar Key',
-        imageUrl:'https://i.etsystatic.com/13657333/d/il/b5dcbd/1202095436/il_340x270.1202095436_8me5.jpg?version=0',
+        imageUrl: 'https://i.etsystatic.com/13657333/d/il/b5dcbd/1202095436/il_340x270.1202095436_8me5.jpg?version=0',
         description: 'Bar Key',
         price: '$20.00',
     },
     {
         title: 'Pint Glass',
-        imageUrl:'https://images.crateandbarrel.com/is/image/Crate/PintTumblerWCrownSHS16/?$web_product_hero$&160203172057&wid=625&hei=625',
+        imageUrl: 'https://images.crateandbarrel.com/is/image/Crate/PintTumblerWCrownSHS16/?$web_product_hero$&160203172057&wid=625&hei=625',
         description: 'Glass',
         price: '$12.00',
     },
     {
         title: 'Coffee Mug',
-        imageUrl:'https://i.pinimg.com/236x/64/de/7a/64de7abcd9b031bd3eac82badde2a038--the-coffee-coffee-mugs.jpg',
+        imageUrl: 'https://i.pinimg.com/236x/64/de/7a/64de7abcd9b031bd3eac82badde2a038--the-coffee-coffee-mugs.jpg',
         description: 'Mug',
         price: '$8.00',
     },
 ]
 
 const eventsCardBuilder = () => {
-    let domString   = '';
+    let domString = '';
     domString += `<div class="events-title-container row">`;
     domString += `<h2>Our Events</h2>`;
     domString += `</div>`;
 
     domString += `<div class="row  d-flex flex-wrap">`;
     events.forEach((event) => {
-domString += `<div class="col-sm-12 col-md-8 col-lg-6">`;
+        domString += `<div class="col-sm-12 col-md-8 col-lg-6">`;
         domString += `<div class="card events-card d-flex">`;
         domString += `<img class="card-img-top events-img" src="${event.image}" alt="Image of ${event.imageAlt}">`;
         domString += `<div class="card-body">`;
@@ -107,11 +105,11 @@ domString += `<div class="col-sm-12 col-md-8 col-lg-6">`;
         domString += `</p>`;
         domString += `</div>`;
         domString += `</div>`;
-domString += `</div>`;
+        domString += `</div>`;
     })
     domString += `</div>`;
     printToDom('eventsPage', domString);
-    
+
 };
 
 
@@ -147,7 +145,7 @@ const clearFormInput = () => {
     document.getElementById('emailInput').value = '';
 };
 const submitEvent = () => {
-    document.getElementById('submitButton').addEventListener('click',function (e) {
+    document.getElementById('submitButton').addEventListener('click', function (e) {
         alert('your response has been received');
     });
 };
@@ -156,6 +154,6 @@ const submitEvent = () => {
 const init = () => {
     eventsCardBuilder();
     buyBeerCardBuilder();
-submitEvent();
+    submitEvent();
 };
 init();
