@@ -3,7 +3,7 @@
 const events = [{
         name: 'Clockwork Tasting',
         description: 'We will serve you disturbingly tiny glasses of beer, but many of them, in the surprisingly capacious workings of our grandfather clock. The door is in the back.',
-        image: 'https://www.theclockdepot.com/images/D/Corner-Grandfather-Clock-611-252-HR.jpg',
+        image: 'https://images-na.ssl-images-amazon.com/images/I/41o85jeYnVL.jpg',
         imageAlt: 'our grandfather clock, which put in an appearance this afternoon',
         date: '04/26/2019',
         address: '123 The Other Way, Nook Grandfather Clock, Nashville, 37211',
@@ -30,7 +30,7 @@ const events = [{
         name: 'Nashville Bar Festival',
         description: 'A perfectly ordinary, humdrum bar festival in which we are the only shining beacon of hope.',
         image: 'https://media.timeout.com/images/103932506/630/472/image.jpg',
-        imageAlt: 'a green sward with people who are more interested in beer than magical occurrences. Stations are arranged about the sward in the in-between light of not quite day, where patrons can obtain beer.',
+        imageAlt: 'patrons enjoying a variety of mundane beer-stations set around a green sward in the half-light of not quite day',
         date: '05/15/2019',
         address: '123 The Other Way, Our Sliver Of Nature, Nashville, 37211',
         attendees: ['Mary', 'Daniel', 'Mark', 'Sarah']
@@ -83,16 +83,17 @@ const eventsCardBuilder = () => {
     domString += `<h2>Our Events</h2>`;
     domString += `</div>`;
 
-    domString += `<div class="row">`;
+    domString += `<div class="row  d-flex flex-wrap">`;
     events.forEach((event) => {
 domString += `<div class="col-sm-12 col-md-8 col-lg-6">`;
-        domString += `<div class="card events-card">`;
+        domString += `<div class="card events-card d-flex">`;
         domString += `<img class="card-img-top events-img" src="${event.image}" alt="Image of ${event.imageAlt}">`;
         domString += `<div class="card-body">`;
         domString += `<h5 class="card-title events-card-title">${event.name}</h5>`;
         domString += `<p class="card-text events-card-description">${event.description}</p>`;
         domString += `<p class="card-text events-card-date"><span class='bold-text'>When</span>: ${event.date}</p>`;
         domString += `<p class="card-text event-address"><span class='bold-text'>Where</span>: ${event.address}</p>`;
+        domString += `</div>`;
         domString += `<div class="card-footer">`;
         domString += `<p class="card-text event-attendees"><span class='bold-text'>Patrons Definitely Attending</span></p>`;
         domString += `<p class="card-text">`;
@@ -110,6 +111,7 @@ domString += `</div>`;
     })
     domString += `</div>`;
     printToDom('eventsPage', domString);
+    
 };
 
 
