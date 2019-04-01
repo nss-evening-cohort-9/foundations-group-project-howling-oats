@@ -37,12 +37,8 @@ const events = [{
     }
 ];
 
-// definitions
-const ShoppingCart = () => {
-    "use strict";
-}
     // definition DOM Elements
-    const productsEl = document.querySelector(".products");
+    const beerEl = document.querySelector(".beer-container");
     const cartEl = document.querySelector(".shopping-cart-list");
     const productQuantityEl = document.querySelector(".product-quantity");
     const emptyCartEl = document.querySelector(".empty-cart-btn");
@@ -54,36 +50,42 @@ const ShoppingCart = () => {
 const beers = [
 {
     title: 'Vintage T Shirt',
+    id: 1,
     imageUrl:'https://img.etsystatic.com/il/380a33/1548068326/il_570xN.1548068326_km2w.jpg?version=0',
     description: 'Shirt',
     price: '$20.00',
 },
     {
     title: 'Exclusive Variety Six Pack',
+    id: 2,
     imageUrl: 'https://www.wegmans.com/content/dam/wegmans/products/560/20560.jpg',
     description: 'Six Pack',
     price: '$10.00',
 },
     {
     title: 'Beer Hat',
+    id: 3,
     imageUrl:'https://images-na.ssl-images-amazon.com/images/I/71PjjenZxdL._SL1500_.jpg',
     description: 'hat',
     price: '$15.00',
 },
     {
     title: 'Bar Key',
+    id: 4,
     imageUrl:'https://i.etsystatic.com/13657333/d/il/b5dcbd/1202095436/il_340x270.1202095436_8me5.jpg?version=0',
     description: 'Bar Key',
     price: '$20.00',
 },
     {
     title: 'Pint Glass',
+    id: 5,
     imageUrl:'https://images.crateandbarrel.com/is/image/Crate/PintTumblerWCrownSHS16/?$web_product_hero$&160203172057&wid=625&hei=625',
     description: 'Glass',
     price: '$12.00',
 },
     {
     title: 'Coffee Mug',
+    id: 6,
     imageUrl:'https://i.pinimg.com/236x/64/de/7a/64de7abcd9b031bd3eac82badde2a038--the-coffee-coffee-mugs.jpg',
     description: 'Mug',
     price: '$8.00',
@@ -148,10 +150,9 @@ const buyBeerCardBuilder = () => {
         domString += `<h2 class = "beerDescription">${beer.description}</h2>`
         domString += `<h2 class = "beerPrice">${beer.price}</h2>`
         domString += `<footer class = 'beetFooter'>`
-        domString += ` <button ="addBtn" id =${beer.id}>Add</button>`;
+        domString += ` <button class="add-to-cart" id =${beer.id}>Add to Cart</button>`;
         domString += `</footer>`
         domString += `</div>`;
-
     });
     printToDom('beer-page', domString)
 }
@@ -161,9 +162,10 @@ const buyBeerCardBuilder = () => {
 const generateCartList = () => {
     cartEl.innerHTML = "";
 
-    productsInCart.forEach(function(item) {
+    productsInCart.forEach((item) => {
+        console.log(productsInCart);
       const li = document.createElement("li");
-      li.innerHTML = `${beer.quantity} ${item.product.name} - $${item.product.price * item.quantity}`;
+      li.innerHTML = `${item.quantity} ${item.product.title} - $${item.product.price * item.quantity}`;
       cartEl.appendChild(li);
     });
 
@@ -186,16 +188,18 @@ const generateCartList = () => {
   }
 
   // Setting up listeners for click event on all products and Empty Cart button as well
-  const setupListeners = () =>  {
-    productsEl.addEventListener("click", function(e) {
+  const setupListeners = (e) =>  {
+    beerEl.addEventListener("click", function(e) {
       const el = e.target;
+      console.log(el);
       if(el.classList.contains("add-to-cart")) {
-       const elId = el.dataset.id;
+       const elId = el.id;
        addToCart(elId);
       }
     });
 
     emptyCartEl.addEventListener("click", function(e) {
+        console.log(emptyCartEl);
       if(confirm("Are you sure?")) {
         productsInCart = [];
       }
@@ -205,12 +209,13 @@ const generateCartList = () => {
 
   // Adds new items or updates existing one in productsInCart array
   const addToCart = (id) =>  {
-    const obj = beer[id];
+    console.log(id)
+    const obj = beers[id];
     if(productsInCart.length === 0 || productFound(obj.id) === undefined) {
       productsInCart.push({product: obj, quantity: 1});
     } else {
       productsInCart.forEach(function(item) {
-        if(item.product.id === obj.id) {
+        if(item.beer.id === obj.id) {
           item.quantity++;
         }
       });
@@ -220,8 +225,9 @@ const generateCartList = () => {
 
   // This function checks if project is already in productsInCart array
   const productFound = (productId) => {
+      console.log(productId);
     return productsInCart.find(function(item) {
-      return item.product.id === productId;
+      return item.beer.id === productId;
     });
   }
 
@@ -248,10 +254,10 @@ eventsCardBuilder();
 buyBeerCardBuilder();
 submitEvent();
 setupListeners();
-ShoppingCart();
 };
 
 init();
+
 
 // var generateProductList = function() {
 //     products.forEach(function(item) {
