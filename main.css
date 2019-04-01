@@ -2,15 +2,27 @@ body {
     background-color: blanchedalmond;
 }
 
+.background-img {
+    background: url(https://ichef.bbci.co.uk/news/660/cpsprodpb/4BB2/production/_103287391_craftbeersgetty.jpg)no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
+
 /* start of buy beer */
 .beer-card{
-    width: 40%;
-    box-shadow:10px 10px 5px;
-    border: 1px solid lightblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    width: 30%;
+    box-shadow:5px 5px 1px;
+    border: 1px solid gray;
     margin-right: 40px;
-    margin-top: 40px;
+    margin-top: 33px;
     background-color:#F5F5F5;
-    padding: 10%;
 }
 
 .beer-card-img-top {
@@ -30,7 +42,9 @@ body {
 }
 
 .add-to-cart {
-    float: right;
+    display: flex;
+    justify-content: center;
+
   }
 
   .shopping-cart {
@@ -67,7 +81,7 @@ body {
   }
 
   .cart-checkout {
-    background: limegreen;
+    background: rgb(50, 205, 205);
   }
 
   /* end of buy beer styling */

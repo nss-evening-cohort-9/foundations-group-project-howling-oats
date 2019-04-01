@@ -144,13 +144,13 @@ const printToDom = (divId, textToPrint) => {
 const buyBeerCardBuilder = () => {
     let domString = '';
     beers.forEach((beer) => {
-        domString += `<div = 'beer-card'>`
+        domString += `<div class = 'beer-card'>`
         domString += `<h2 class = 'beerHeader'>${beer.title}</h2>`
         domString += `<img class="beer-card-img-top" src="${beer.imageUrl}" alt="Card image cap">`
-        domString += `<h2 class = "beerDescription">${beer.description}</h2>`
-        domString += `<h2 class = "beerPrice"> $ ${beer.price}.00</h2>`
+        domString += `<h4 class = "beerDescription">${beer.description}</h4>`
+        domString += `<h4 class = "beerPrice"> $ ${beer.price}.00</h4>`
         domString += `<footer class = 'beetFooter'>`
-        domString += ` <button class="add-to-cart" id =${beer.id}>Add to Cart</button>`;
+        domString += ` <a class="btn btn-danger add-to-cart" id =${beer.id}>Add to Cart</a>`;
         domString += `</footer>`
         domString += `</div>`;
     });
