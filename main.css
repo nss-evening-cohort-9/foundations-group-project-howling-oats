@@ -28,8 +28,8 @@ body {
 .beer-card-img-top {
         display: flex;
         justify-content: center;
-        height: 500px;
-        width: 500px;
+        height: 350px;
+        width: 350px;
         margin-right: auto;
         margin-left: auto;
         display: block;
@@ -44,6 +44,7 @@ body {
 .add-to-cart {
     display: flex;
     justify-content: center;
+    background:  rgb(50, 205, 205);
 
   }
 
@@ -82,6 +83,12 @@ body {
 
   .cart-checkout {
     background: rgb(50, 205, 205);
+  }
+
+  .h1-title {
+      display: flex;
+      justify-content: center;
+      color: white;
   }
 
   /* end of buy beer styling */

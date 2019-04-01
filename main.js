@@ -150,7 +150,7 @@ const buyBeerCardBuilder = () => {
         domString += `<h4 class = "beerDescription">${beer.description}</h4>`
         domString += `<h4 class = "beerPrice"> $ ${beer.price}.00</h4>`
         domString += `<footer class = 'beetFooter'>`
-        domString += ` <a class="btn btn-danger add-to-cart" id =${beer.id}>Add to Cart</a>`;
+        domString += ` <a class="btn add-to-cart" id =${beer.id}>Add to Cart</a>`;
         domString += `</footer>`
         domString += `</div>`;
     });
