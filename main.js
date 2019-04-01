@@ -254,6 +254,7 @@ eventsCardBuilder();
 buyBeerCardBuilder();
 submitEvent();
 setupListeners();
+addEvents();
 };
 
 init();
