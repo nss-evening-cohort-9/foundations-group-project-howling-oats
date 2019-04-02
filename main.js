@@ -5,6 +5,7 @@ const productQuantityEl = document.querySelector(".product-quantity");
 const emptyCartEl = document.querySelector(".empty-cart-btn");
 const cartCheckoutEl = document.querySelector(".cart-checkout");
 const totalPriceEl = document.querySelector(".total-price");
+    // end of definitions
 
 
 const brewmasters = [
@@ -98,7 +99,6 @@ const brewmastersBuilder = (brewmasters) => {
 
 
     
-    // end of definitions
 // beer data
 
        
@@ -147,10 +147,9 @@ const beers = [
     },
 ]
 
-productsInCart = [];
 
 //end of beer data
-
+//function which loops over the events array and forms cards which are printed to the dom
 const eventsCardBuilder = () => {
     let domString = '';
     domString += `<div class="events-title-container row">`;
@@ -310,9 +309,6 @@ const init = () => {
     eventsCardBuilder();
     buyBeerCardBuilder();
     submitEvent();
+    brewmastersBuilder(brewmasters);
 };
 init();
-};
-
-init();
-
