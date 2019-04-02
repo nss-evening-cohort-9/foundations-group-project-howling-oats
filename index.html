@@ -21,8 +21,10 @@
             <a class="nav-item nav-link" href="#" id="navToEvents">Events</a>
             <a class="nav-item nav-link" href="#" id="navToBuy">Buy Beers</a>
           </div>
-    </nav>   
+    </nav>
+    <div class = "background-img">
     <h1>Howling Oat's brewery</h1>
+<!-- start of form -->
     <form>
 
         <div class="form-group">
@@ -34,16 +36,45 @@
             <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Enter your email address">
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
-        
+
     <button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
     </form>
+<!-- end of form -->
+<!-- events page -->
+    <div class="container events-container" id="eventsPage"></div>
+    <!-- end of events page -->
+    <!-- brew masters page -->
+    <div class = "brew-masters" id = "brew"></div>
+    <!-- end of brew masters page -->
+    <!-- start of buy beer page -->
+    <h1 class = "h1-title">Merchandise For Sale</h1>
+    <div id = 'beer-page' class = 'beer-container'></div>
+    <div class="shopping-cart">
+            <div class="shopping-cart-head">
+              <span class="product-quantity">0</span> Product(s) in Cart
+            </div>
+            <ul class="shopping-cart-list">
+            </ul>
+            <div class="cart-buttons">
+              <a href="#0" class="button empty-cart-btn">Empty</a>
+              <a href="#0" class="button cart-checkout">Checkout - <span class="total-price">$0</span></a>
+            </div>
+        </div>
+          </div>
+    <!-- footer beings -->
+    <footer class="main_footer">
+            <p>&copy; Copyrights AllRights Reserved </p>
+            <div class="footer_links">
+                <a class="footer_media" href="https://www.twitter.com" target="_blank"><img src="http://goinkscape.com/wp-content/uploads/2015/07/twitter-logo-final.png" width="50px" title="Twitter"></a>
+                <a class="footer_media" href="https://www.facebook.com" target="_blank"><img src="https://www.seeklogo.net/wp-content/uploads/2016/09/facebook-icon-preview-400x400.png" width="65px" title="Facebook"></a>
+                <h3 class = "address">123 Main Street, Nashville TN, 32027</h3>
+                <h3 class = "phone_number">615-767-6686</h3>
+            </div>
+        </footer>
+        <!-- footer ends -->
+      </div>
 
-<div class="container events-container" id="eventsPage"></div>
-<div class = "brew-masters" id = "brew"></div>
-<div id = 'beer-page' class = 'beer-container'></div>
 
-</div>
-</div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
