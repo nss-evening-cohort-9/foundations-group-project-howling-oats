@@ -1,4 +1,3 @@
-
 //array of objects with info about events
 const events = [{
         name: 'Clockwork Tasting',
@@ -142,40 +141,33 @@ const buyBeerCardBuilder = () => {
 }
 // end of beer card builder
 
-const addClickEvents = (e) => {
-    const nav = e.target.id;
-    if (nav === 'navToHome') {
-        document.getElementById('navToHome').addEventListener('click', function (e) {
-        e.preventDefault()
-    // daniel's ||| document.getElementById('beer-page').classList.add('hideStuff')
-        document.getElementById('eventsPage').classList.add('hideStuff');
-        document.getElementById('beer-page').classList.add('hideStuff');
-        document.getElementById('home-page-container').classList.remove('hideStuff');
-    })
-}
-    // waiting for daniel's page
-    // document.getElementById('navToHome').addEventListener('click', function (e) {
-    //     e.preventDefault()
-    //      document.getElementById('beer-page').classList.add('hideStuff')
-    //      document.getElementById('eventsPage').classList.add('hideStuff')
-    //      document.getElementById('beer-page').classList.add('hideStuff')
-    //      document.getElementById('home-page-container').classList.remove('hideStuff')
-    //  })
-    // document.getElementById('navToEvents').addEventListener('click', function (e) {
-    //     e.preventDefault()
-    //     document.getElementById('home-page-container').classList.add('hideStuff')
-    //      //document.getElementById('beer-page').classList.add('hideStuff')
-    //     document.getElementById('eventsPage').classList.remove('hideStuff')
-    //     document.getElementById('beer-page').classList.add('hideStuff') 
-    //  })
-    else if (nav === 'navTobuy'){
-     document.getElementById('navToBuy').addEventListener('click', function (e) {
-        e.preventDefault();
-        document.getElementById('home-page-container').classList.add('hideStuff')
-         //document.getElementById('beer-page').classList.add('hideStuff')
-        document.getElementById('eventsPage').classList.add('hideStuff')
-        document.getElementById('beer-page').classList.remove('hideStuff') 
-     })
+const showPage =(e)=> {
+    const navId = e.target.id;
+
+    const pageElements = document.getElementsByClassName('page');
+    for(let i = 0; i<pageElements.length; i++){
+        pageElements[i].classList.add('hideStuff');
+    }
+    switch (navId) {
+        case 'navToHome':
+          document.getElementById('home-page').classList.remove('hideStuff');
+          break;
+        case 'navToBrew':
+          document.getElementById('brewmaster-page').classList.remove('hideStuff');
+          break;
+        case 'navToEvents':
+          document.getElementById('events-page').classList.remove('hideStuff');
+          break;
+        case 'navToBuy':
+          document.getElementById('store-page').classList.remove('hideStuff');
+          break;
+      }
+};
+
+const addClickEvents = () => {
+    const navElements = document.getElementsByClassName('nav-item');
+    for(let i = 0; i<navElements.length; i++){
+        navElements[i].addEventListener('click',showPage);
     }
    };
 
