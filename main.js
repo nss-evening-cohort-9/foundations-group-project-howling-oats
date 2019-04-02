@@ -258,25 +258,3 @@ addEvents();
 };
 
 init();
-
-
-// var generateProductList = function() {
-//     products.forEach(function(item) {
-//       var productEl = document.createElement("div");
-//       productEl.className = "product";
-//       productEl.innerHTML = `<div class="product-image">
-//                                 <img src="${item.imageUrl}" alt="${item.name}">
-//                              </div>
-//                              <div class="product-name"><span>Product:</span> ${item.name}</div>
-//                              <div class="product-description"><span>Description:</span> ${item.description}</div>
-//                              <div class="product-price"><span>Price:</span> ${item.price} $</div>
-//                              <div class="product-add-to-cart">
-//                                <a href="#0" class="button see-more">More Details</a>
-//                                <a href="#0" class="button add-to-cart" data-id=${item.id}>Add to Cart</a>
-//                              </div>
-//                           </div>
-// `;
-
-// productsEl.appendChild(productEl);
-//     });
-//   }
