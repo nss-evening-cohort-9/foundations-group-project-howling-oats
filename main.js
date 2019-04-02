@@ -108,8 +108,6 @@ const brewmasters = [
                 price: '$8.00',
             },
         ]
-
-
 const brewmastersBuilder = (brewmasters) => {
     let domString = '';
     brewmasters.forEach((brewmaster) =>{
