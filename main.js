@@ -1,5 +1,39 @@
-//array of objects with info about events
-const events = [{
+
+const brewmasters = [
+    {
+        name : "Daniel Fornica",
+        github: "https://github.com/Dannyboy85",
+        imageUrl: "https://avatars2.githubusercontent.com/u/38631819?s=400&u=dce6bc66d171b8fb61df5fb4ab16df1e405b8b5e&v=4",
+        description: "One of the most distinct beers you will ever have. It black colour and froth make the drink almost liquid meal. Very filling with bitter taste",
+
+    },
+    {
+        name : "Sarah Thorne",
+        github: "https://github.com/sarahjulesthorne",
+        imageUrl: "https://avatars1.githubusercontent.com/u/47871647?s=400&v=4",
+        description: "My favorite brewery is slightly odd around the edges and a bit wrinkled. Their beer has the taste of yesterdays fondly remembered with hints of that time you forgot about. I go there often, when the future seems inexplicably unreadable, and find clarity in the muses and the brews.",
+
+
+    },
+    {
+        name : "Mark Okafor",
+        github: "https://github.com/okaformark",
+        imageUrl: "https://avatars2.githubusercontent.com/u/38026989?s=400&v=4",
+        description: "You will mainly find Mark working on production in the brewery. He follows each brew through every stage making sure the beer holds true to Howling oat's high quality standards.",
+
+
+    },
+    {
+        name : "Mary West",
+        github: "https://github.com/westmary48",
+        imageUrl: "https://avatars2.githubusercontent.com/u/42101883?s=400&v=4",
+        description: "Mary is one of the many loyal Howling Oats customers turned employee. Mary moved from California back in 2011 and hasn't looked back every since.  When she's not working at the brewery you can find her drinking beer with her fiancé and friends and hanging out with her pup Cooper.",
+
+
+    }
+];
+    const events = [
+        {
         name: 'Clockwork Tasting',
         description: 'We will serve you disturbingly tiny glasses of beer, but many of them, in the surprisingly capacious workings of our grandfather clock. The door is in the back.',
         image: 'https://www.theclockdepot.com/images/D/Corner-Grandfather-Clock-611-252-HR.jpg',
@@ -35,62 +69,82 @@ const events = [{
                 attendees: ['Mary', 'Daniel', 'Mark', 'Sarah']
                 }
         ];
-        // beer data
-        const beers = [
-            {
-                title: 'Vintage T Shirt',
-                imageUrl:'https://img.etsystatic.com/il/380a33/1548068326/il_570xN.1548068326_km2w.jpg?version=0',
-                description: 'Shirt',
-                price: '$20.00',
-                },
-                {
-                title: 'Exclusive Variety Six Pack',
-                imageUrl: 'https://www.wegmans.com/content/dam/wegmans/products/560/20560.jpg',
-                description: 'Six Pack',
-                price: '$10.00',
-                },
-                {
-                title: 'Beer Hat',
-                imageUrl:'https://images-na.ssl-images-amazon.com/images/I/71PjjenZxdL._SL1500_.jpg',
-                description: 'picture of item',
-                price: '$15.00',
-                },
-                {
-                title: 'Bar Key',
-                imageUrl:'https://i.etsystatic.com/13657333/d/il/b5dcbd/1202095436/il_340x270.1202095436_8me5.jpg?version=0',
-                description: 'Bar Key',
-                price: '$20.00',
-                },
-                {
-                title: 'Pint Glass',
-                imageUrl:'https://images.crateandbarrel.com/is/image/Crate/PintTumblerWCrownSHS16/?$web_product_hero$&160203172057&wid=625&hei=625',
-                description: 'Glass',
-                price: '$12.00',
-                },
-                {
-                title: 'Coffee Mug',
-                imageUrl:'https://i.pinimg.com/236x/64/de/7a/64de7abcd9b031bd3eac82badde2a038--the-coffee-coffee-mugs.jpg',
-                description: 'Mug',
-                price: '$8.00',
-            },
-        ]
+
 const brewmastersBuilder = (brewmasters) => {
     let domString = '';
     brewmasters.forEach((brewmaster) =>{
         domString += `<div class = "container">`
         domString += `<img src='${brewmaster.imageUrl}' title ='${brewmaster.description}'>`
         domString +=  `<h1>${brewmaster.name}</h1>`
-        domString +=  `<h5>${brewmaster.github}</h5>`  
-        domString += `</div>` 
+        domString +=  `<h5>${brewmaster.github}</h5>`
+        domString += `</div>`
 
     });
 
-    printToDom('brew',domString) 
+    printToDom('brew',domString)
 }
 
 
 //array of objects with info about events
 
+    // definition DOM Elements
+    const beerEl = document.querySelector(".beer-container");
+    const cartEl = document.querySelector(".shopping-cart-list");
+    const productQuantityEl = document.querySelector(".product-quantity");
+    const emptyCartEl = document.querySelector(".empty-cart-btn");
+    const cartCheckoutEl = document.querySelector(".cart-checkout");
+    const totalPriceEl = document.querySelector(".total-price");
+
+    // end of definitions
+// beer data
+const beers = [
+{
+    title: 'Vintage T Shirt',
+    id: 0,
+    imageUrl:'https://img.etsystatic.com/il/380a33/1548068326/il_570xN.1548068326_km2w.jpg?version=0',
+    description: 'Shirt',
+    price: '20',
+},
+    {
+    title: 'Exclusive Variety Six Pack',
+    id: 1,
+    imageUrl: 'https://www.wegmans.com/content/dam/wegmans/products/560/20560.jpg',
+    description: 'Six Pack',
+    price: '10',
+},
+    {
+    title: 'Beer Hat',
+    id: 2,
+    imageUrl:'https://images-na.ssl-images-amazon.com/images/I/71PjjenZxdL._SL1500_.jpg',
+    description: 'hat',
+    price: '15',
+},
+    {
+    title: 'Bar Key',
+    id: 3,
+    imageUrl:'https://i.etsystatic.com/13657333/d/il/b5dcbd/1202095436/il_340x270.1202095436_8me5.jpg?version=0',
+    description: 'Bar Key',
+    price: '20',
+},
+    {
+    title: 'Pint Glass',
+    id: 4,
+    imageUrl:'https://images.crateandbarrel.com/is/image/Crate/PintTumblerWCrownSHS16/?$web_product_hero$&160203172057&wid=625&hei=625',
+    description: 'Glass',
+    price: '12',
+},
+    {
+    title: 'Coffee Mug',
+    id: 5,
+    imageUrl:'https://i.pinimg.com/236x/64/de/7a/64de7abcd9b031bd3eac82badde2a038--the-coffee-coffee-mugs.jpg',
+    description: 'Mug',
+    price: '8',
+    },
+]
+
+productsInCart = [];
+
+//end of beer data
 
 const eventsCardBuilder = () => {
     let domString   = '';
@@ -100,7 +154,7 @@ const eventsCardBuilder = () => {
 
     domString += `<div class="row">`;
     events.forEach((event) => {
-domString += `<div class="col-sm-12 col-md-8 col-lg-6">`;
+        domString += `<div class="col-sm-12 col-md-8 col-lg-6">`;
         domString += `<div class="card events-card">`;
         domString += `<img class="card-img-top events-img" src="${event.image}" alt="Image of ${event.imageAlt}">`;
         domString += `<div class="card-body">`;
@@ -121,7 +175,7 @@ domString += `<div class="col-sm-12 col-md-8 col-lg-6">`;
         domString += `</p>`;
         domString += `</div>`;
         domString += `</div>`;
-domString += `</div>`;
+        domString += `</div>`;
     })
     domString += `</div>`;
     printToDom('eventsPage', domString);
@@ -140,20 +194,98 @@ const printToDom = (divId, textToPrint) => {
 const buyBeerCardBuilder = () => {
     let domString = '';
     beers.forEach((beer) => {
-        domString += `<div = 'card'>`
-        domString += `<h2 class = 'header'>${beer.title}</h2>`
-        domString += `<img class="card-img-top" src="${beer.imageUrl}" alt="Card image cap">`
-        domString += `<h2>${beer.description}</h2>`
-        domString += `<h2>${beer.price}</h2>`
-        domString += `<footer = 'footer'>`
-        domString += ` <button ="btn btn-danger addBtn" id =${beer.id}>Add</button>`;
+        domString += `<div class = 'beer-card'>`
+        domString += `<h2 class = 'beerHeader'>${beer.title}</h2>`
+        domString += `<img class="beer-card-img-top" src="${beer.imageUrl}" alt="Card image cap">`
+        domString += `<h4 class = "beerDescription">${beer.description}</h4>`
+        domString += `<h4 class = "beerPrice"> $ ${beer.price}.00</h4>`
+        domString += `<footer class = 'beetFooter'>`
+        domString += ` <a class="btn add-to-cart" id =${beer.id}>Add to Cart</a>`;
         domString += `</footer>`
         domString += `</div>`;
-
     });
     printToDom('beer-page', domString)
 }
 // end of beer card builder
+
+// start of Cart functions
+const generateCartList = () => {
+    cartEl.innerHTML = "";
+ 
+    productsInCart.forEach((item) => {
+        console.log(productsInCart);
+      const li = document.createElement("li");
+      li.innerHTML = `${item.quantity} ${item.product.title} - $${item.product.price * item.quantity}`;
+      cartEl.appendChild(li);
+    });
+ 
+    productQuantityEl.innerHTML = productsInCart.length;
+ 
+    generateCartButtons()
+  }
+ 
+ 
+  // Function that generates Empty Cart and Checkout buttons based on condition that checks if productsInCart array is empty
+  const generateCartButtons = () => {
+    if(productsInCart.length > 0) {
+      emptyCartEl.style.display = "block";
+      cartCheckoutEl.style.display = "block"
+      totalPriceEl.innerHTML = "$ " + calculateTotalPrice();
+    } else {
+      emptyCartEl.style.display = "none";
+      cartCheckoutEl.style.display = "none";
+    }
+  }
+ 
+  // Setting up listeners for click event on all products and Empty Cart button as well
+  const setupListeners = (e) =>  {
+    beerEl.addEventListener("click", function(e) {
+      const el = e.target;
+      console.log(el);
+      if(el.classList.contains("add-to-cart")) {
+       const elId = el.id;
+       addToCart(elId);
+      }
+    });
+ 
+    emptyCartEl.addEventListener("click", function(e) {
+        console.log(emptyCartEl);
+      if(confirm("Are you sure?")) {
+        productsInCart = [];
+      }
+      generateCartList();
+    });
+  }
+ 
+  // Adds new items or updates existing one in productsInCart array
+  const addToCart = (id) =>  {
+    console.log(id)
+    const obj = beers[id];
+    if(productsInCart.length === 0 || productFound(obj.id) === undefined) {
+      productsInCart.push({product: obj, quantity: 1});
+    } else {
+      productsInCart.forEach(function(item) {
+        if(item.beer.id === obj.id) {
+          item.quantity++;
+        }
+      });
+    }
+    generateCartList();
+  }
+ 
+  // This function checks if project is already in productsInCart array
+  const productFound = (productId) => {
+      console.log(productId);
+    return productsInCart.find(function(item) {
+      return item.product.id === productId;
+    });
+  }
+ 
+  const calculateTotalPrice = () => {
+    return productsInCart.reduce(function(total, item) {
+      return total + (item.product.price *  item.quantity);
+    }, 0);
+  }
 
 const showPage =(e)=> {
     const navId = e.target.id;
@@ -197,10 +329,13 @@ const submitEvent = () => {
 
 
 const init = () => {
+    addClickEvents();
     eventsCardBuilder();
     buyBeerCardBuilder();
     submitEvent();
-    addClickEvents();
+    setupListeners();
+    brewmastersBuilder(brewmasters);
 };
+
 init();
 
