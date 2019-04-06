@@ -141,9 +141,7 @@ footer a{
   .hideStuff {
     display: none;
   }
-
-  #card-print {
-
-  }
-
-
+#card-print {
+  display: flex;
+  flex-wrap: wrap;
+}
