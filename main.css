@@ -131,6 +131,7 @@ footer a{
   /* footer styling */
 
   .main_footer {
+    align-items: flex-end;
     display: block;
     color: black;
     text-align: center;
