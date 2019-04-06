@@ -1,5 +1,3 @@
-
-
 const brewmasters = [
     {
         name : "Daniel Fornica",
@@ -63,7 +61,8 @@ const brewmasters = [
         date: '05/01/2019',
         address: '123 The Other Way, Room Of Disappearance, Nashville, 37211',
         attendees: ['Mary', 'Daniel', 'Mark', 'Anastasia']
-    }, {
+    }, 
+    {
         name: 'Nashville Bar Festival',
         description: 'A perfectly ordinary, humdrum bar festival in which we are the only shining beacon of hope.',
         image: 'https://media.timeout.com/images/103932506/630/472/image.jpg',
@@ -72,8 +71,74 @@ const brewmasters = [
         address: '123 The Other Way, Our Sliver Of Nature, Nashville, 37211',
         attendees: ['Mary', 'Daniel', 'Mark', 'Sarah']
     }
-];
+    ];
+  // beer array of objects  
+const beers = [
+    {
+        title: 'Vintage T Shirt',
+        id: 0,
+        imageUrl:'https://img.etsystatic.com/il/380a33/1548068326/il_570xN.1548068326_km2w.jpg?version=0',
+        description: 'Shirt',
+        price: '20',
+    },
+        {
+        title: 'Exclusive Variety Six Pack',
+        id: 1,
+        imageUrl: 'https://www.wegmans.com/content/dam/wegmans/products/560/20560.jpg',
+        description: 'Six Pack',
+        price: '10',
+    },
+        {
+        title: 'Beer Hat',
+        id: 2,
+        imageUrl:'https://images-na.ssl-images-amazon.com/images/I/71PjjenZxdL._SL1500_.jpg',
+        description: 'hat',
+        price: '15',
+    },
+        {
+        title: 'Bar Key',
+        id: 3,
+        imageUrl:'https://i.etsystatic.com/13657333/d/il/b5dcbd/1202095436/il_340x270.1202095436_8me5.jpg?version=0',
+        description: 'Bar Key',
+        price: '20',
+    },
+        {
+        title: 'Pint Glass',
+        id: 4,
+        imageUrl:'https://images.crateandbarrel.com/is/image/Crate/PintTumblerWCrownSHS16/?$web_product_hero$&160203172057&wid=625&hei=625',
+        description: 'Glass',
+        price: '12',
+    },
+        {
+        title: 'Coffee Mug',
+        id: 5,
+        imageUrl:'https://i.pinimg.com/236x/64/de/7a/64de7abcd9b031bd3eac82badde2a038--the-coffee-coffee-mugs.jpg',
+        description: 'Mug',
+        price: '8',
+        },
+    ];
 
+    productsInCart = [];
+
+    //end of beer data
+
+// definition DOM Elements
+const beerEl = document.querySelector(".beer-container");
+const cartEl = document.querySelector(".shopping-cart-list");
+const productQuantityEl = document.querySelector(".product-quantity");
+const emptyCartEl = document.querySelector(".empty-cart-btn");
+const cartCheckoutEl = document.querySelector(".cart-checkout");
+const totalPriceEl = document.querySelector(".total-price");
+    // end of definitions
+    
+//printToDom function
+const printToDom = (divId, textToPrint) => {
+    const selectedDiv = document.getElementById(divId);
+    selectedDiv.innerHTML = textToPrint;
+};
+// end printToDom function
+
+// start of brew-masters domString
 const brewmastersBuilder = (brewmasters) => {
     let domString = '';
     brewmasters.forEach((brewmaster) =>{
@@ -85,70 +150,12 @@ const brewmastersBuilder = (brewmasters) => {
 
     });
 
-    printToDom('brew',domString)
+    printToDom('brewmaster-page',domString)
 }
 
+// end of brew-masters domString
 
-// definition DOM Elements
-const beerEl = document.querySelector(".beer-container");
-const cartEl = document.querySelector(".shopping-cart-list");
-const productQuantityEl = document.querySelector(".product-quantity");
-const emptyCartEl = document.querySelector(".empty-cart-btn");
-const cartCheckoutEl = document.querySelector(".cart-checkout");
-const totalPriceEl = document.querySelector(".total-price");
-    // end of definitions
-
-    
-// beer data
-
-       
-const beers = [
-{
-    title: 'Vintage T Shirt',
-    id: 0,
-    imageUrl:'https://img.etsystatic.com/il/380a33/1548068326/il_570xN.1548068326_km2w.jpg?version=0',
-    description: 'Shirt',
-    price: '20',
-},
-    {
-    title: 'Exclusive Variety Six Pack',
-    id: 1,
-    imageUrl: 'https://www.wegmans.com/content/dam/wegmans/products/560/20560.jpg',
-    description: 'Six Pack',
-    price: '10',
-},
-    {
-    title: 'Beer Hat',
-    id: 2,
-    imageUrl:'https://images-na.ssl-images-amazon.com/images/I/71PjjenZxdL._SL1500_.jpg',
-    description: 'hat',
-    price: '15',
-},
-    {
-    title: 'Bar Key',
-    id: 3,
-    imageUrl:'https://i.etsystatic.com/13657333/d/il/b5dcbd/1202095436/il_340x270.1202095436_8me5.jpg?version=0',
-    description: 'Bar Key',
-    price: '20',
-},
-    {
-    title: 'Pint Glass',
-    id: 4,
-    imageUrl:'https://images.crateandbarrel.com/is/image/Crate/PintTumblerWCrownSHS16/?$web_product_hero$&160203172057&wid=625&hei=625',
-    description: 'Glass',
-    price: '12',
-},
-    {
-    title: 'Coffee Mug',
-    id: 5,
-    imageUrl:'https://i.pinimg.com/236x/64/de/7a/64de7abcd9b031bd3eac82badde2a038--the-coffee-coffee-mugs.jpg',
-    description: 'Mug',
-    price: '8',
-    },
-]
-
-
-//end of beer data
+// start of events card builder
 //function which loops over the events array and forms cards which are printed to the dom
 const eventsCardBuilder = () => {
     let domString = '';
@@ -183,18 +190,11 @@ const eventsCardBuilder = () => {
         domString += `</div>`;
     })
     domString += `</div>`;
-    printToDom('eventsPage', domString);
+    printToDom('events-page', domString);
 
 };
 
-
-//printToDom function
-const printToDom = (divId, textToPrint) => {
-    const selectedDiv = document.getElementById(divId);
-    selectedDiv.innerHTML = textToPrint;
-};
-// end printToDom function
-
+// end of events cardbuilder
 
 // Start of beer card builder
 const buyBeerCardBuilder = () => {
@@ -210,7 +210,7 @@ const buyBeerCardBuilder = () => {
         domString += `</footer>`
         domString += `</div>`;
     });
-    printToDom('beer-page', domString)
+    printToDom('store-page', domString)
 }
 // end of beer card builder
 
@@ -293,7 +293,42 @@ const generateCartList = () => {
     }, 0);
   }
 
-// console.log(events[0].description);
+
+  // nav functions
+
+  const showPage =(e)=> {
+    const navId = e.target.id;
+
+    const pageElements = document.getElementsByClassName('page');
+    for(let i = 0; i<pageElements.length; i++){
+        pageElements[i].classList.add('hideStuff');
+    }
+    switch (navId) {
+        case 'navToHome':
+          document.getElementById('home-page').classList.remove('hideStuff');
+          break;
+        case 'navToBrew':
+          document.getElementById('brewmaster-page').classList.remove('hideStuff');
+          break;
+        case 'navToEvents':
+          document.getElementById('events-page').classList.remove('hideStuff');
+          break;
+        case 'navToBuy':
+          document.getElementById('store-page').classList.remove('hideStuff');
+          break;
+      }
+};
+
+const addClickEvents = () => {
+    const navElements = document.getElementsByClassName('nav-item');
+    for(let i = 0; i<navElements.length; i++){
+        navElements[i].addEventListener('click',showPage);
+    }
+   };
+
+   // end of nav functions
+
+// form functions
 const clearFormInput = () => {
     document.getElementById('nameInput').value = '';
     document.getElementById('emailInput').value = '';
@@ -304,12 +339,14 @@ const submitEvent = () => {
     });
 };
 
+// end of form functions
 
 const init = () => {
-    eventsCardBuilder();
-    buyBeerCardBuilder();
-    submitEvent();
-    setupListeners();
-    brewmastersBuilder(brewmasters);
+addClickEvents();
+eventsCardBuilder();
+buyBeerCardBuilder();
+submitEvent();
+setupListeners();
+brewmastersBuilder(brewmasters);
 };
 init();
