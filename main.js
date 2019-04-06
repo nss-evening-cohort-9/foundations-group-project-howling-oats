@@ -150,7 +150,6 @@ const brewmastersBuilder = () => {
         domString += `</div>`
 
     });
-console.log(domString);
     printToDom('brewmaster-page',domString)
 }
 
@@ -167,8 +166,8 @@ const eventsCardBuilder = () => {
     domString += `<div class="row  d-flex flex-wrap">`;
     events.forEach((event) => {
         domString += `<div class="col-sm-12 col-md-8 col-lg-6">`;
-        domString += `<div class="card events-card d-flex mb-3">`;
-        domString += `<img class="card-img-top events-img w-100" src="${event.image}" alt="Image of ${event.imageAlt}">`;
+        domString += `<div class="card events-card d-flex mb-3 flex-column flex-nowrap justify-content-center">`;
+        domString += `<img class="card-img-top events-img" src="${event.image}" alt="Image of ${event.imageAlt}">`;
         domString += `<div class="card-body d-flex flex-column flex-nowrap justify-content-around" style="height: 400px;">`;
         domString += `<h5 class="card-title events-card-title">${event.name}</h5>`;
         domString += `<p class="card-text events-card-description">${event.description}</p>`;

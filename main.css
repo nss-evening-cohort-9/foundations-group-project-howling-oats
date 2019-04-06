@@ -138,4 +138,10 @@ footer a{
     display: none;
   }
 
+  
 
+.events-img {
+  margin: auto;
+  height: 200px;
+  width: 250px;
+}
