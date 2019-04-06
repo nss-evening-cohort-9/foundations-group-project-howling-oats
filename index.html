@@ -22,27 +22,28 @@
             <a class="nav-item nav-link" href="#" id="navToBuy">Buy Beers</a>
           </div>
     </nav>
-    <div class = "background-img">
+    <!-- <div class = "background-img"> -->
     <h1>Howling Oat's brewery</h1>
 
-    <div class="page" id="home-page">home</div>
+    <div class="page" id="home-page">
+        <!-- start of form -->
+        <form>
 
-<!-- start of form -->
-<form>
+            <div class="form-group">
+                <label for="nameInput">Full Name</label>
+                <input type="text" class="form-control" id="nameInput" placeholder="Enter Full Name">
+            </div>
+            <div class="form-group">
+                <label for="emailInput">Email address</label>
+                <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Enter your email address">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
 
-    <div class="form-group">
-        <label for="nameInput">Full Name</label>
-        <input type="text" class="form-control" id="nameInput" placeholder="Enter Full Name">
-    </div>
-    <div class="form-group">
-        <label for="emailInput">Email address</label>
-        <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Enter your email address">
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-    </div>
+        <button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
+        </form>
+        <!-- end of form --></div>
 
-<button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
-</form>
-<!-- end of form -->
+
 
     <div class="page hideStuff" id="brewmaster-page">brewmaster</div>
 
@@ -50,10 +51,12 @@
     <div class="page hideStuff" id="events-page">events</div>
 
 
-    <div class="page hideStuff" id="store-page">store</div>
+    <div class="page hideStuff" id="store-page">
+        <div class = "store-container">
         <!-- start of buy beer page -->
         <h1 class = "h1-title">Merchandise For Sale</h1>
         <!-- <div id = 'beer-page' class = 'beer-container'></div> -->
+        </div>
         <div class="shopping-cart">
                 <div class="shopping-cart-head">
                   <span class="product-quantity">0</span> Product(s) in Cart
@@ -65,7 +68,9 @@
                   <a href="#0" class="button cart-checkout">Checkout - <span class="total-price">$0</span></a>
                 </div>
             </div>
-              </div>
+        </div>
+ </div>
+
 
     <!-- footer beings -->
     <footer class="main_footer">
@@ -79,6 +84,9 @@
         </footer>
         <!-- footer ends -->
       </div>
+      <div id="home-page" class="home-page-container hideStuff"></div>
+      <div id = "beer-page" class = "beer-container hideStuff"></div>
+      <div class="container events-container hideStuff" id="eventsPage"></div>
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
