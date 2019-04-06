@@ -178,7 +178,7 @@ domString += `<div class="col-sm-12 col-md-8 col-lg-6">`;
 domString += `</div>`;
     })
     domString += `</div>`;
-    printToDom('eventsPage', domString);
+    printToDom('events-page', domString);
 };
 
 
@@ -340,6 +340,8 @@ buyBeerCardBuilder();
 submitEvent();
 setupListeners();
 brewmastersBuilder(brewmasters);
+showPage();
+addClickEvents();
 
 };
 
