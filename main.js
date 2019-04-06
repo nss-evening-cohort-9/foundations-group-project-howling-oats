@@ -81,14 +81,14 @@ const brewmastersBuilder = (brewmasters) => {
 
     });
 
-    printToDom('brew',domString)
+    printToDom('brewmaster-page',domString)
 }
 
 
 //array of objects with info about events
 
     // definition DOM Elements
-    const beerEl = document.querySelector(".beer-container");
+    const beerEl = document.querySelector("#store-page");
     const cartEl = document.querySelector(".shopping-cart-list");
     const productQuantityEl = document.querySelector(".product-quantity");
     const emptyCartEl = document.querySelector(".empty-cart-btn");
@@ -204,7 +204,7 @@ const buyBeerCardBuilder = () => {
         domString += `</footer>`
         domString += `</div>`;
     });
-    printToDom('beer-page', domString)
+    printToDom('store-page', domString)
 }
 // end of beer card builder
 

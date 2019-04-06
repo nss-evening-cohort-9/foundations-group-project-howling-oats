@@ -22,7 +22,7 @@ footer{
 footer a{
   margin: 0 10px;
 }
-#brew{
+#brewmaster-page{
   display: flex;
   flex-flow: wrap;
 }
@@ -66,7 +66,7 @@ footer a{
         margin-top: 10px;
 }
 
-.beer-container {
+#beer-page {
     display: flex;
     flex-wrap: wrap;
 }
@@ -131,6 +131,11 @@ footer a{
     text-align: center;
     padding: 16px;
     text-decoration: none;
+  }
+
+  .events-title-container {
+    display: flex;
+    flex-flow: wrap;
   }
 
 
