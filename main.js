@@ -119,8 +119,6 @@ const beers = [
 
     //end of beer data
 
-//array of objects with info about events
-
     // definition DOM Elements
     const beerEl = document.querySelector("#store-page");
     const cartEl = document.querySelector(".shopping-cart-list");
@@ -208,7 +206,7 @@ const buyBeerCardBuilder = () => {
         domString += `</footer>`
         domString += `</div>`;
     });
-    printToDom('store-page', domString)
+    printToDom('card-print', domString)
 }
 // end of beer card builder
 
