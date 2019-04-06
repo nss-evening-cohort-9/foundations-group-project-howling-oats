@@ -1,11 +1,3 @@
-// definition DOM Elements
-const beerEl = document.querySelector(".beer-container");
-const cartEl = document.querySelector(".shopping-cart-list");
-const productQuantityEl = document.querySelector(".product-quantity");
-const emptyCartEl = document.querySelector(".empty-cart-btn");
-const cartCheckoutEl = document.querySelector(".cart-checkout");
-const totalPriceEl = document.querySelector(".total-price");
-    // end of definitions
 
 
 const brewmasters = [
@@ -49,7 +41,7 @@ const brewmasters = [
         name: 'Clockwork Tasting',
         description: 'We will serve you disturbingly tiny glasses of beer, but many of them, in the surprisingly capacious workings of our grandfather clock. The door is in the back.',
         image: 'https://www.theclockdepot.com/images/D/Corner-Grandfather-Clock-611-252-HR.jpg',
-        imageAlt: 'Image of our grandfather clock, which put in an appearance this afternoon',
+        imageAlt: 'our grandfather clock, which put in an appearance this afternoon',
         date: '04/26/2019',
         address: '123 The Other Way, Nook Grandfather Clock, Nashville, 37211',
         attendees: ['Mary', 'Daniel', 'Mark', 'James Hook']
@@ -58,7 +50,7 @@ const brewmasters = [
         name: 'The Haunted Bottles One-Night Smash',
         description: 'Join us for a night of ghostly music. If you\'ve never heard a ghost sing from a bottle, this event is for you. Also door prizes!',
         image: './images/bottle-picture.png',
-        imageAlt: 'Image of several bottles, each a different color and haunted by a very nice spirit',
+        imageAlt: 'several bottles, each a different color and haunted by a very nice spirit',
         date: '10/31/2019',
         address: '123 The Other Way, Ghost-hosting Room, Nashville, 37211',
         attendees: ['Mary', 'Daniel', 'Mark', 'Ebeneezer']
@@ -97,6 +89,14 @@ const brewmastersBuilder = (brewmasters) => {
 }
 
 
+// definition DOM Elements
+const beerEl = document.querySelector(".beer-container");
+const cartEl = document.querySelector(".shopping-cart-list");
+const productQuantityEl = document.querySelector(".product-quantity");
+const emptyCartEl = document.querySelector(".empty-cart-btn");
+const cartCheckoutEl = document.querySelector(".cart-checkout");
+const totalPriceEl = document.querySelector(".total-price");
+    // end of definitions
 
     
 // beer data
@@ -153,15 +153,15 @@ const beers = [
 const eventsCardBuilder = () => {
     let domString = '';
     domString += `<div class="events-title-container row">`;
-    domString += `<h2>Our Events</h2>`;
+    domString += `<h2 class="text-white">Our Events</h2>`;
     domString += `</div>`;
 
     domString += `<div class="row  d-flex flex-wrap">`;
     events.forEach((event) => {
         domString += `<div class="col-sm-12 col-md-8 col-lg-6">`;
-        domString += `<div class="card events-card d-flex">`;
-        domString += `<img class="card-img-top events-img" src="${event.image}" alt="Image of ${event.imageAlt}">`;
-        domString += `<div class="card-body">`;
+        domString += `<div class="card events-card d-flex mb-3">`;
+        domString += `<img class="card-img-top events-img w-100" src="${event.image}" alt="Image of ${event.imageAlt}">`;
+        domString += `<div class="card-body d-flex flex-column flex-nowrap justify-content-around" style="height: 400px;">`;
         domString += `<h5 class="card-title events-card-title">${event.name}</h5>`;
         domString += `<p class="card-text events-card-description">${event.description}</p>`;
         domString += `<p class="card-text events-card-date"><span class='bold-text'>When</span>: ${event.date}</p>`;
@@ -309,6 +309,7 @@ const init = () => {
     eventsCardBuilder();
     buyBeerCardBuilder();
     submitEvent();
+    setupListeners();
     brewmastersBuilder(brewmasters);
 };
 init();
