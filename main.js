@@ -72,7 +72,8 @@ const brewmasters = [
         attendees: ['Mary', 'Daniel', 'Mark', 'Sarah']
     }
     ];
-  // beer array of objects  
+
+  //array of beer objects  
 const beers = [
     {
         title: 'Vintage T Shirt',
@@ -139,7 +140,7 @@ const printToDom = (divId, textToPrint) => {
 // end printToDom function
 
 // start of brew-masters domString
-const brewmastersBuilder = (brewmasters) => {
+const brewmastersBuilder = () => {
     let domString = '';
     brewmasters.forEach((brewmaster) =>{
         domString += `<div class = "container">`
@@ -149,7 +150,7 @@ const brewmastersBuilder = (brewmasters) => {
         domString += `</div>`
 
     });
-
+console.log(domString);
     printToDom('brewmaster-page',domString)
 }
 
@@ -347,6 +348,6 @@ eventsCardBuilder();
 buyBeerCardBuilder();
 submitEvent();
 setupListeners();
-brewmastersBuilder(brewmasters);
+brewmastersBuilder();
 };
 init();
