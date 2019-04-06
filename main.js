@@ -287,6 +287,41 @@ const generateCartList = () => {
     }, 0);
   }
 
+
+  // nav
+
+  const showPage =(e)=> {
+    const navId = e.target.id;
+
+    const pageElements = document.getElementsByClassName('page');
+    for(let i = 0; i<pageElements.length; i++){
+        pageElements[i].classList.add('hideStuff');
+    }
+    switch (navId) {
+        case 'navToHome':
+          document.getElementById('home-page').classList.remove('hideStuff');
+          break;
+        case 'navToBrew':
+          document.getElementById('brewmaster-page').classList.remove('hideStuff');
+          break;
+        case 'navToEvents':
+          document.getElementById('events-page').classList.remove('hideStuff');
+          break;
+        case 'navToBuy':
+          document.getElementById('store-page').classList.remove('hideStuff');
+          break;
+      }
+};
+
+const addClickEvents = () => {
+    const navElements = document.getElementsByClassName('nav-item');
+    for(let i = 0; i<navElements.length; i++){
+        navElements[i].addEventListener('click',showPage);
+    }
+   };
+
+   // end of nav
+
 // console.log(events[0].description);
 const clearFormInput = () => {
     document.getElementById('nameInput').value = '';
