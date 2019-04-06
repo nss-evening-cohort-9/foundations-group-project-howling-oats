@@ -335,14 +335,12 @@ const submitEvent = () => {
 
 
 const init = () => {
+addClickEvents();
 eventsCardBuilder();
 buyBeerCardBuilder();
 submitEvent();
 setupListeners();
 brewmastersBuilder(brewmasters);
-showPage();
-addClickEvents();
-
 };
 
 init();
