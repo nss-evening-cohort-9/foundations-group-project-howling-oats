@@ -165,37 +165,46 @@ flex-wrap: wrap;
   justify-content: center;
 }
 
-.group-photo {
+/* .group-photo {
   width: 600px;
   height: 400px;
 
 }
 
 .group-photo2 {
-  width: 600px;
+  width: 400px;
   height: 400px;
 }
 
 .group-photo3 {
-  width: 600px;
+  width: 400px;
   height: 400px;
 
 }
 
 .group-photo4 {
-  width: 600px;
+  width: 400px;
   height: 400px;
 
-}
+} */
 
-.home-photos {
+/* .home-photos {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
+} */
 
 form {
   background-color: bisque;
   width: 40%;
   text-align: center;
 }
+
+.carousel-item {
+  height: 400px;
+  overflow: hidden;
+  width: 100%;
+  }
+  .carousel-item img {
+  width: 100%;
+  }

@@ -337,6 +337,15 @@ const submitEvent = () => {
 
 // end of form functions
 
+// carousel function
+
+const carousel = () => {
+$('.carousel').carousel({
+    interval: 2000
+  })
+
+}
+
 const init = () => {
 addClickEvents();
 eventsCardBuilder();
@@ -344,6 +353,7 @@ buyBeerCardBuilder();
 submitEvent();
 setupListeners();
 brewmastersBuilder(brewmasters);
+carousel();
 };
 
 init();
