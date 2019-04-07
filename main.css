@@ -152,3 +152,27 @@ flex-wrap: wrap;
   justify-content: center;
   font: 200;
 }
+
+#home-page {
+  justify-content: center;
+}
+
+.group-photo {
+  width: 600px;
+  height: 400px;
+}
+
+.group-photo2 {
+  width: 600px;
+  height: 400px;
+}
+
+.group-photo3 {
+  width: 600px;
+  height: 400px;
+}
+
+.group-photo4 {
+  width: 600px;
+  height: 400px;
+}
