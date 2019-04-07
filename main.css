@@ -1,5 +1,10 @@
 body {
-    background-color: blanchedalmond;
+    /* background-color: blanchedalmond; */
+    background: url(https://ichef.bbci.co.uk/news/660/cpsprodpb/4BB2/production/_103287391_craftbeersgetty.jpg)no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 header {
@@ -32,14 +37,14 @@ footer a{
   width: 500px;
 
 }
-.background-img {
+/* .background-img {
     background: url(https://ichef.bbci.co.uk/news/660/cpsprodpb/4BB2/production/_103287391_craftbeersgetty.jpg)no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 
-}
+} */
 
 /* start of buy beer */
 .beer-card{
@@ -126,6 +131,7 @@ footer a{
   /* footer styling */
 
   .main_footer {
+    align-items: flex-end;
     display: block;
     color: black;
     text-align: center;
@@ -136,5 +142,7 @@ footer a{
   .hideStuff {
     display: none;
   }
-
-
+#card-print {
+  display: flex;
+  flex-wrap: wrap;
+}
