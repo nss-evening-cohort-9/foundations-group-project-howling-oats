@@ -140,6 +140,7 @@ flex-wrap: wrap;
 }
 
 .title {
+  display: flex;
   color: white;
   justify-content: center;
 }
