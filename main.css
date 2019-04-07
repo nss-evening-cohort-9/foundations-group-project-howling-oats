@@ -160,6 +160,7 @@ flex-wrap: wrap;
 .group-photo {
   width: 600px;
   height: 400px;
+
 }
 
 .group-photo2 {
@@ -170,9 +171,17 @@ flex-wrap: wrap;
 .group-photo3 {
   width: 600px;
   height: 400px;
+
 }
 
 .group-photo4 {
   width: 600px;
   height: 400px;
+
+}
+
+.home-photos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
