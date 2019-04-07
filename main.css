@@ -146,6 +146,8 @@ flex-wrap: wrap;
 }
 
 .paragraph {
+  display: flex;
+  text-align: center;
   color: white;
 }
 
