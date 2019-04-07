@@ -1,142 +1,142 @@
+
 body {
-    background: url(https://ichef.bbci.co.uk/news/660/cpsprodpb/4BB2/production/_103287391_craftbeersgetty.jpg)no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+  /* background-color: blanchedalmond; */
+  background: url(https://ichef.bbci.co.uk/news/660/cpsprodpb/4BB2/production/_103287391_craftbeersgetty.jpg)no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 header {
-  justify-content: center;
-  background-color: azure;
-  display: flex;
-  padding: 20px;
+background-color: azure;
+display: flex;
+padding: 20px;
+justify-content: center;
 }
 header nav{
-  margin-left: auto;
+margin-left: auto;
 }
 nav a{
 margin: 0 10px;
+font-size: 1.8em !important;
 }
 footer{
-  background-color: azure;
-  display: flex;
-  padding: 20px;
-  justify-content: center
+background-color: azure;
+display: flex;
+padding: 20px;
+justify-content: center
 }
 footer a{
-  margin: 0 10px;
+margin: 0 10px;
 }
 
 .container{
-  display: flex;
-  flex-direction: column;
-  width: 500px;
+display: flex;
+flex-direction: column;
+width: 500px;
 
 }
 
 /* start of buy beer */
 .beer-card{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-    width: 30%;
-    box-shadow:5px 5px 1px;
-    border: 1px solid gray;
-    margin-right: 40px;
-    margin-top: 33px;
-    background-color:#F5F5F5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  width: 30%;
+  box-shadow:5px 5px 1px;
+  border: 1px solid gray;
+  margin-right: 40px;
+  margin-top: 33px;
+  background-color:#F5F5F5;
 }
 
 .beer-card-img-top {
-        display: flex;
-        justify-content: center;
-        height: 350px;
-        width: 350px;
-        margin-right: auto;
-        margin-left: auto;
-        display: block;
-        margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      height: 350px;
+      width: 350px;
+      margin-right: auto;
+      margin-left: auto;
+      display: block;
+      margin-top: 10px;
 }
 
 .page {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .add-to-cart {
+  display: flex;
+  justify-content: center;
+  background:  rgb(50, 205, 205);
+
+}
+
+.shopping-cart {
+  top: 0;
+  right: 0;
+  width: 300px;
+  min-height: 300px;
+  margin-right: 20px;
+  margin-top: 10px;
+  padding: 20px;
+  background: wheat;
+}
+
+.shopping-cart-head {
+  background: steelblue;
+  color: white;
+  padding: 5px;
+}
+
+.shopping-cart,
+.shopping-cart-head {
+  border-radius: 5px;
+}
+
+.empty-cart-btn,
+.cart-checkout {
+  display: none;
+
+}
+
+.empty-cart-btn {
+  margin-bottom: 5px;
+}
+
+.cart-checkout {
+  background: rgb(50, 205, 205);
+}
+
+.h1-title {
     display: flex;
     justify-content: center;
-    background:  rgb(50, 205, 205);
-
-  }
-
-  .shopping-cart {
-    top: 0;
-    right: 0;
-    width: 300px;
-    min-height: 300px;
-    margin-right: 20px;
-    margin-top: 10px;
-    padding: 20px;
-    background: wheat;
-  }
-
-  .shopping-cart-head {
-    background: steelblue;
     color: white;
-    padding: 5px;
-  }
+}
 
-  .shopping-cart,
-  .shopping-cart-head {
-    border-radius: 5px;
-  }
+/* end of buy beer styling */
 
-  .empty-cart-btn,
-  .cart-checkout {
-    display: none;
+/* footer styling */
 
-  }
+.main_footer {
+  align-items: flex-end;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
 
-  .empty-cart-btn {
-    margin-bottom: 5px;
-  }
-
-  .cart-checkout {
-    background: rgb(50, 205, 205);
-  }
-
-  .h1-title {
-      display: flex;
-      justify-content: center;
-      color: white;
-  }
-
-  /* end of buy beer styling */
-
-  /* footer styling */
-
-  .main_footer {
-    align-items: flex-end;
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 16px;
-    text-decoration: none;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-  }
-
-  .hideStuff {
-    display: none;
-  }
+.hideStuff {
+  display: none;
+}
 #card-print {
-  display: flex;
-  flex-wrap: wrap;
+display: flex;
+flex-wrap: wrap;
+
 }
 
 .title {
@@ -146,4 +146,9 @@ footer a{
 
 .paragraph {
   color: white;
+}
+
+.navbar {
+  justify-content: center;
+  font: 200;
 }
