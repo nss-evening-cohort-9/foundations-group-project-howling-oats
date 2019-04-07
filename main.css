@@ -1,7 +1,7 @@
 
 body {
   /* background-color: blanchedalmond; */
-  background: url(https://ichef.bbci.co.uk/news/660/cpsprodpb/4BB2/production/_103287391_craftbeersgetty.jpg)no-repeat center center fixed;
+  background: url(https://previews.123rf.com/images/tatyanakyz/tatyanakyz1602/tatyanakyz160200048/53581018-seamless-background-with-beer-brewing-process-production-beer-brewery-factory-production-elements-tr.jpg)no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -115,6 +115,7 @@ width: 500px;
     display: flex;
     justify-content: center;
     color: white;
+    background: rgb(50, 205, 205);
 }
 
 /* end of buy beer styling */
@@ -143,12 +144,16 @@ flex-wrap: wrap;
   display: flex;
   color: white;
   justify-content: center;
+  font-size: 100px;
 }
 
 .paragraph {
   display: flex;
   text-align: center;
-  color: white;
+  color:white;
+  font-size: 30px;
+  width: 65%;
+  /* background-color:azure; */
 }
 
 .navbar {
@@ -187,4 +192,10 @@ flex-wrap: wrap;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+form {
+  background-color: bisque;
+  width: 40%;
+  text-align: center;
 }
