@@ -164,6 +164,14 @@ flex-wrap: wrap;
   justify-content: center;
 }
 
+/* Events cards image styling */
+.events-img {
+  margin: auto;
+  height: 200px;
+  width: 250px;
+}
+/* End of events cards image styling */
+
 form {
   background-color: bisque;
   width: 40%;

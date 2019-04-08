@@ -1,9 +1,9 @@
-
 const brewmasters = [
     {
         name : "Daniel Fornica",
         github: "https://github.com/Dannyboy85",
         imageUrl: "https://avatars2.githubusercontent.com/u/38631819?s=400&u=dce6bc66d171b8fb61df5fb4ab16df1e405b8b5e&v=4",
+        imageAlt: 'Image of Daniel looking off to the side.',
         description: "One of the most distinct beers you will ever have. It black colour and froth make the drink almost liquid meal. Very filling with bitter taste",
 
     },
@@ -11,6 +11,7 @@ const brewmasters = [
         name : "Sarah Thorne",
         github: "https://github.com/sarahjulesthorne",
         imageUrl: "https://avatars1.githubusercontent.com/u/47871647?s=400&v=4",
+        imageAlt: 'Image of a laptop displaying an alert that says "Hello world, I am Sarah Thorne". Black gloved hands are poised as if to type on the keyboard.',
         description: "My favorite brewery is slightly odd around the edges and a bit wrinkled. Their beer has the taste of yesterdays fondly remembered with hints of that time you forgot about. I go there often, when the future seems inexplicably unreadable, and find clarity in the muses and the brews.",
 
 
@@ -19,6 +20,7 @@ const brewmasters = [
         name : "Mark Okafor",
         github: "https://github.com/okaformark",
         imageUrl: "https://avatars2.githubusercontent.com/u/38026989?s=400&v=4",
+        imageAlt: 'Black-and-white image of Mark standing casually between two white cars, wearing a light-colored coat, with his hands in his pockets.',
         description: "You will mainly find Mark working on production in the brewery. He follows each brew through every stage making sure the beer holds true to Howling oat's high quality standards.",
 
 
@@ -27,17 +29,21 @@ const brewmasters = [
         name : "Mary West",
         github: "https://github.com/westmary48",
         imageUrl: "https://avatars2.githubusercontent.com/u/42101883?s=400&v=4",
+        imageAlt: 'Headshot of Mary smiling at the camera.',
         description: "Mary is one of the many loyal Howling Oats customers turned employee. Mary moved from California back in 2011 and hasn't looked back every since.  When she's not working at the brewery you can find her drinking beer with her fiancé and friends and hanging out with her pup Cooper.",
 
 
     }
 ];
+
+//array of objects with info about events
+
     const events = [
         {
         name: 'Clockwork Tasting',
         description: 'We will serve you disturbingly tiny glasses of beer, but many of them, in the surprisingly capacious workings of our grandfather clock. The door is in the back.',
         image: 'https://www.theclockdepot.com/images/D/Corner-Grandfather-Clock-611-252-HR.jpg',
-        imageAlt: 'Image of our grandfather clock, which put in an appearance this afternoon',
+        imageAlt: 'our grandfather clock, which put in an appearance this afternoon',
         date: '04/26/2019',
         address: '123 The Other Way, Nook Grandfather Clock, Nashville, 37211',
         attendees: ['Mary', 'Daniel', 'Mark', 'James Hook']
@@ -46,30 +52,32 @@ const brewmasters = [
         name: 'The Haunted Bottles One-Night Smash',
         description: 'Join us for a night of ghostly music. If you\'ve never heard a ghost sing from a bottle, this event is for you. Also door prizes!',
         image: './images/bottle-picture.png',
-        imageAlt: 'Image of several bottles, each a different color and haunted by a very nice spirit',
+        imageAlt: 'several bottles, each a different color and haunted by a very nice spirit',
         date: '10/31/2019',
         address: '123 The Other Way, Ghost-hosting Room, Nashville, 37211',
         attendees: ['Mary', 'Daniel', 'Mark', 'Ebeneezer']
-        },
-        {
-            name: 'Echo\'s SpokenWord',
-            description: 'An "open mirror" night, in which you speak heartfelt poetry to our mirror and your words are echoed back to you. Your reflection is definitely not alive.',
-            image: 'https://www.t2day.com/ebay/Vanity_Makeup_Mirror/Hand_Held_Mirror/Vintage_Antique_Style_Girls_Princess_Oval_Roune_Vanity_Makeup_Hand_Held_Mirror_Silver_Small_01.jpg',
-            imageAlt: 'Image of our handheld mirror, with silver embroidery around the edge. Not magical in the least.',
-            date: '05/01/2019',
-            address: '123 The Other Way, Room Of Disappearance, Nashville, 37211',
-            attendees: ['Mary', 'Daniel', 'Mark', 'Anastasia']
-            },{
-                name: 'Nashville Bar Festival',
-                description: 'A perfectly ordinary, humdrum bar festival in which we are the only shining beacon of hope.',
-                image: 'https://media.timeout.com/images/103932506/630/472/image.jpg',
-                imageAlt: 'Image of a green sward with people who are more interested in beer than magical occurrences. Stations are arranged about the sward in the in-between light of not quite day, where patrons can obtain beer.',
-                date: '05/15/2019',
-                address: '123 The Other Way, Our Sliver Of Nature, Nashville, 37211',
-                attendees: ['Mary', 'Daniel', 'Mark', 'Sarah']
-                }
-        ];
-// beer data
+    },
+    {
+        name: 'Echo\'s SpokenWord',
+        description: 'An "open mirror" night, in which you speak heartfelt poetry to our mirror and your words are echoed back to you. Your reflection is definitely not alive.',
+        image: 'https://www.t2day.com/ebay/Vanity_Makeup_Mirror/Hand_Held_Mirror/Vintage_Antique_Style_Girls_Princess_Oval_Roune_Vanity_Makeup_Hand_Held_Mirror_Silver_Small_01.jpg',
+        imageAlt: 'our handheld mirror, with silver embroidery around the edge. Not magical in the least.',
+        date: '05/01/2019',
+        address: '123 The Other Way, Room Of Disappearance, Nashville, 37211',
+        attendees: ['Mary', 'Daniel', 'Mark', 'Anastasia']
+    }, 
+    {
+        name: 'Nashville Bar Festival',
+        description: 'A perfectly ordinary, humdrum bar festival in which we are the only shining beacon of hope.',
+        image: 'https://media.timeout.com/images/103932506/630/472/image.jpg',
+        imageAlt: 'patrons enjoying a variety of mundane beer-stations set around a green sward in the half-light of not quite day',
+        date: '05/15/2019',
+        address: '123 The Other Way, Our Sliver Of Nature, Nashville, 37211',
+        attendees: ['Mary', 'Daniel', 'Mark', 'Sarah']
+    }
+    ];
+
+  //array of beer objects  
 const beers = [
     {
         title: 'Vintage T Shirt',
@@ -119,11 +127,12 @@ const beers = [
         description: 'Mug',
         price: '8',
         },
-    ]
+    ];
 
     productsInCart = [];
 
     //end of beer data
+
 
     // definition DOM Elements
     const beerEl = document.querySelector("#store-page");
@@ -134,7 +143,7 @@ const beers = [
     const totalPriceEl = document.querySelector(".total-price");
 
     // end of definitions
-
+    
 //printToDom function
 const printToDom = (divId, textToPrint) => {
     const selectedDiv = document.getElementById(divId);
@@ -143,40 +152,39 @@ const printToDom = (divId, textToPrint) => {
 // end printToDom function
 
 // start of brew-masters domString
-const brewmastersBuilder = (brewmasters) => {
+const brewmastersBuilder = () => {
     let domString = '';
     brewmasters.forEach((brewmaster) =>{
         domString += `<div class = "container">`
-        domString += `<img src='${brewmaster.imageUrl}' title ='${brewmaster.description}'>`
+        domString += `<img src='${brewmaster.imageUrl}' title ='${brewmaster.description}' alt='${brewmaster.imageAlt} ${brewmaster.description}'>`
         domString +=  `<h1>${brewmaster.name}</h1>`
         domString +=  `<h5>${brewmaster.github}</h5>`
         domString += `</div>`
 
     });
-
     printToDom('brewmaster-page',domString)
 }
 
 // end of brew-masters domString
 
-
-// start of events card builder
+// start of events card builder function which loops over the events array and forms cards which are printed to the dom
 const eventsCardBuilder = () => {
-    let domString   = '';
+    let domString = '';
     domString += `<div class="events-title-container row">`;
-    domString += `<h2>Our Events</h2>`;
+    domString += `<h2 class="text-white">Our Events</h2>`;
     domString += `</div>`;
 
-    domString += `<div class="row">`;
+    domString += `<div class="row  d-flex flex-wrap">`;
     events.forEach((event) => {
-domString += `<div class="col-sm-12 col-md-8 col-lg-6">`;
-        domString += `<div class="card events-card">`;
+        domString += `<div class="col-sm-12 col-md-8 col-lg-6">`;
+        domString += `<div class="card events-card d-flex mb-3 flex-column flex-nowrap justify-content-center">`;
         domString += `<img class="card-img-top events-img" src="${event.image}" alt="Image of ${event.imageAlt}">`;
-        domString += `<div class="card-body">`;
+        domString += `<div class="card-body d-flex flex-column flex-nowrap justify-content-around" style="height: 400px;">`;
         domString += `<h5 class="card-title events-card-title">${event.name}</h5>`;
         domString += `<p class="card-text events-card-description">${event.description}</p>`;
         domString += `<p class="card-text events-card-date"><span class='bold-text'>When</span>: ${event.date}</p>`;
         domString += `<p class="card-text event-address"><span class='bold-text'>Where</span>: ${event.address}</p>`;
+        domString += `</div>`;
         domString += `<div class="card-footer">`;
         domString += `<p class="card-text event-attendees"><span class='bold-text'>Patrons Definitely Attending</span></p>`;
         domString += `<p class="card-text">`;
@@ -190,10 +198,11 @@ domString += `<div class="col-sm-12 col-md-8 col-lg-6">`;
         domString += `</p>`;
         domString += `</div>`;
         domString += `</div>`;
-domString += `</div>`;
+        domString += `</div>`;
     })
     domString += `</div>`;
     printToDom('events-page', domString);
+
 };
 
 // end of events cardbuilder
@@ -204,7 +213,7 @@ const buyBeerCardBuilder = () => {
     beers.forEach((beer) => {
         domString += `<div class = 'beer-card'>`
         domString += `<h2 class = 'beerHeader'>${beer.title}</h2>`
-        domString += `<img class="beer-card-img-top" src="${beer.imageUrl}" alt="Image of ${beer.imageAlt}">`
+        domString += `<img class="beer-card-img-top" src="${beer.imageUrl}" alt="${beer.imageAlt}">`
         domString += `<h4 class = "beerDescription">${beer.description}</h4>`
         domString += `<h4 class = "beerPrice"> $ ${beer.price}.00</h4>`
         domString += `<footer class = 'beetFooter'>`
@@ -336,7 +345,7 @@ const clearFormInput = () => {
     document.getElementById('emailInput').value = '';
 };
 const submitEvent = () => {
-    document.getElementById('submitButton').addEventListener('click',function (e) {
+    document.getElementById('submitButton').addEventListener('click', function (e) {
         alert('your response has been received');
     });
 };
@@ -361,6 +370,4 @@ setupListeners();
 brewmastersBuilder(brewmasters);
 carousel();
 };
-
 init();
-
