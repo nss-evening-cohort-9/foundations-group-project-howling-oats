@@ -165,35 +165,6 @@ flex-wrap: wrap;
   justify-content: center;
 }
 
-/* .group-photo {
-  width: 600px;
-  height: 400px;
-
-}
-
-.group-photo2 {
-  width: 400px;
-  height: 400px;
-}
-
-.group-photo3 {
-  width: 400px;
-  height: 400px;
-
-}
-
-.group-photo4 {
-  width: 400px;
-  height: 400px;
-
-} */
-
-/* .home-photos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-} */
-
 form {
   background-color: bisque;
   width: 40%;
