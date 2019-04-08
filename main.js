@@ -214,7 +214,7 @@ const buyBeerCardBuilder = () => {
     beers.forEach((beer) => {
         domString += `<div class = 'beer-card'>`
         domString += `<h2 class = 'beerHeader'>${beer.title}</h2>`
-        domString += `<img class="beer-card-img-top" src="${beer.imageUrl}" alt="Image of ${beer.imageAlt}">`
+        domString += `<img class="beer-card-img-top" src="${beer.imageUrl}" alt="${beer.imageAlt}">`
         domString += `<h4 class = "beerDescription">${beer.description}</h4>`
         domString += `<h4 class = "beerPrice"> $ ${beer.price}.00</h4>`
         domString += `<footer class = 'beetFooter'>`
