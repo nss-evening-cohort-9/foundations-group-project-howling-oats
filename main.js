@@ -167,8 +167,7 @@ const brewmastersBuilder = () => {
 
 // end of brew-masters domString
 
-// start of events card builder
-//function which loops over the events array and forms cards which are printed to the dom
+// start of events card builder function which loops over the events array and forms cards which are printed to the dom
 const eventsCardBuilder = () => {
     let domString = '';
     domString += `<div class="events-title-container row">`;
