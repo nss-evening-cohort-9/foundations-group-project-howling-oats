@@ -75,6 +75,7 @@ const beers = [
         title: 'Vintage T Shirt',
         id: 0,
         imageUrl:'https://img.etsystatic.com/il/380a33/1548068326/il_570xN.1548068326_km2w.jpg?version=0',
+        imageAlt: 'Image of a black t shirt with two howling wolfs on it.',
         description: 'Shirt',
         price: '20',
     },
@@ -82,6 +83,7 @@ const beers = [
         title: 'Exclusive Variety Six Pack',
         id: 1,
         imageUrl: 'https://www.wegmans.com/content/dam/wegmans/products/560/20560.jpg',
+        imageAlt: 'Image of a six pack of beer',
         description: 'Six Pack',
         price: '10',
     },
@@ -89,6 +91,7 @@ const beers = [
         title: 'Beer Hat',
         id: 2,
         imageUrl:'https://images-na.ssl-images-amazon.com/images/I/71PjjenZxdL._SL1500_.jpg',
+        imageAlt: 'Image of a hat that can hold two beer cans by the ears and has a straw for drinking',
         description: 'hat',
         price: '15',
     },
@@ -96,6 +99,7 @@ const beers = [
         title: 'Bar Key',
         id: 3,
         imageUrl:'https://i.etsystatic.com/13657333/d/il/b5dcbd/1202095436/il_340x270.1202095436_8me5.jpg?version=0',
+        imageAlt: 'Image of a bar key to open bottled beer',
         description: 'Bar Key',
         price: '20',
     },
@@ -103,6 +107,7 @@ const beers = [
         title: 'Pint Glass',
         id: 4,
         imageUrl:'https://images.crateandbarrel.com/is/image/Crate/PintTumblerWCrownSHS16/?$web_product_hero$&160203172057&wid=625&hei=625',
+        imageAlt: 'Image of a pint glass for a beer',
         description: 'Glass',
         price: '12',
     },
@@ -110,6 +115,7 @@ const beers = [
         title: 'Coffee Mug',
         id: 5,
         imageUrl:'https://i.pinimg.com/236x/64/de/7a/64de7abcd9b031bd3eac82badde2a038--the-coffee-coffee-mugs.jpg',
+        imageAlt: 'Image of a coffee mug that looks like a beer mug',
         description: 'Mug',
         price: '8',
         },
@@ -198,11 +204,11 @@ const buyBeerCardBuilder = () => {
     beers.forEach((beer) => {
         domString += `<div class = 'beer-card'>`
         domString += `<h2 class = 'beerHeader'>${beer.title}</h2>`
-        domString += `<img class="beer-card-img-top" src="${beer.imageUrl}" alt="Card image cap">`
+        domString += `<img class="beer-card-img-top" src="${beer.imageUrl}" alt="Image of ${beer.imageAlt}">`
         domString += `<h4 class = "beerDescription">${beer.description}</h4>`
         domString += `<h4 class = "beerPrice"> $ ${beer.price}.00</h4>`
         domString += `<footer class = 'beetFooter'>`
-        domString += ` <a class="btn add-to-cart" id =${beer.id}>Add to Cart</a>`;
+        domString += ` <button type="button" class="btn add-to-cart" id =${beer.id}>Add to Cart</button>`;
         domString += `</footer>`
         domString += `</div>`;
     });
