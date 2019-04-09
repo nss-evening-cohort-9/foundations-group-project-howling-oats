@@ -1,3 +1,13 @@
+/*Project was an exercise in bootstrap, printing to dom, arrays and array methods, nav bars, SPAs, and dynamic event listeners
+All pages feature page header with logo, nav bar, and footer.
+Nav bar uses click events to add/remove classes on individual pages to display the selected page and hide the others.
+The home page features a form. When form is filled out and submit is clicked, alert appears confirming submission.  
+Home page also features Bootstrap photo carousel set to 3 second intervals. Captions, alt text,a nd titles have been added to images.
+Brewmasters page features cards formed from brewmasters array which are printed to the DOM. Each image has attached title and alt text.
+Events page features Bootstrap cards formed from events array and printed to DOM. Each image has alt text and title.
+Store page features...
+ */
+//Array of objects containing info about brewmasters
 const brewmasters = [
     {
         name : "Daniel Fornica",
@@ -144,19 +154,19 @@ const beers = [
 
     // end of definitions
     
-//printToDom function
+//printToDom function which sets the inner HTML of the selected element to the designated variable's value
 const printToDom = (divId, textToPrint) => {
     const selectedDiv = document.getElementById(divId);
     selectedDiv.innerHTML = textToPrint;
 };
 // end printToDom function
 
-// start of brew-masters domString
+// start of brew-masters domStringBuilder which loops over objects in brewmasters array and uses extracted info to build string of cards which are printed to the DOM
 const brewmastersBuilder = () => {
     let domString = '';
     brewmasters.forEach((brewmaster) =>{
         domString += `<div class = "container">`
-        domString += `<img src='${brewmaster.imageUrl}' title ='${brewmaster.description}' alt='${brewmaster.imageAlt} ${brewmaster.description}'>`
+        domString += `<img src='${brewmaster.imageUrl}' title ='${brewmaster.imageAlt} ${brewmaster.description}' alt='${brewmaster.imageAlt} ${brewmaster.description}'>`
         domString +=  `<h1>${brewmaster.name}</h1>`
         domString +=  `<h5>${brewmaster.github}</h5>`
         domString += `</div>`
@@ -164,7 +174,6 @@ const brewmastersBuilder = () => {
     });
     printToDom('brewmaster-page',domString)
 }
-
 // end of brew-masters domString
 
 // start of events card builder function which loops over the events array and forms cards which are printed to the dom
@@ -178,7 +187,7 @@ const eventsCardBuilder = () => {
     events.forEach((event) => {
         domString += `<div class="col-sm-12 col-md-8 col-lg-6">`;
         domString += `<div class="card events-card d-flex mb-3 flex-column flex-nowrap justify-content-center">`;
-        domString += `<img class="card-img-top events-img" src="${event.image}" alt="Image of ${event.imageAlt}">`;
+        domString += `<img class="card-img-top events-img" src="${event.image}" title="${event.imageAlt}" alt="Image of ${event.imageAlt}">`;
         domString += `<div class="card-body d-flex flex-column flex-nowrap justify-content-around" style="height: 400px;">`;
         domString += `<h5 class="card-title events-card-title">${event.name}</h5>`;
         domString += `<p class="card-text events-card-description">${event.description}</p>`;
@@ -202,18 +211,16 @@ const eventsCardBuilder = () => {
     })
     domString += `</div>`;
     printToDom('events-page', domString);
-
 };
-
 // end of events cardbuilder
 
-// Start of beer card builder
+// Start of beer card builder which loops over beers array and uses extracted info to form string of cards which are printed to the DOM
 const buyBeerCardBuilder = () => {
     let domString = '';
     beers.forEach((beer) => {
         domString += `<div class = 'beer-card'>`
         domString += `<h2 class = 'beerHeader'>${beer.title}</h2>`
-        domString += `<img class="beer-card-img-top" src="${beer.imageUrl}" alt="${beer.imageAlt}">`
+        domString += `<img class="beer-card-img-top" src="${beer.imageUrl}" title="${beer.imageAlt}" alt="${beer.imageAlt}">`
         domString += `<h4 class = "beerDescription">${beer.description}</h4>`
         domString += `<h4 class = "beerPrice"> $ ${beer.price}.00</h4>`
         domString += `<footer class = 'beetFooter'>`
@@ -306,7 +313,7 @@ const generateCartList = () => {
 
 
   // nav functions
-
+//function forms array of pages by class name, uses for loop to iterate over pages and add class to hide page, then uses switch statement to select page associated with nav link clicked and remove the hide class to display page
   const showPage =(e)=> {
     const navId = e.target.id;
 
@@ -330,6 +337,7 @@ const generateCartList = () => {
       }
 };
 
+//function loops over nav items and adds click event which calls showPage function above
 const addClickEvents = () => {
     const navElements = document.getElementsByClassName('nav-item');
     for(let i = 0; i<navElements.length; i++){
@@ -340,10 +348,13 @@ const addClickEvents = () => {
    // end of nav functions
 
 // form functions
+//function clears name and email inputs on home page form
 const clearFormInput = () => {
     document.getElementById('nameInput').value = '';
     document.getElementById('emailInput').value = '';
 };
+
+//function adds click event listener to home page form submit button which pops alert when executed
 const submitEvent = () => {
     document.getElementById('submitButton').addEventListener('click', function (e) {
         alert('your response has been received');
