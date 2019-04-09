@@ -7,13 +7,14 @@ body {
   -o-background-size: cover;
   background-size: cover;
 }
-
+/* header and nav bar styling */
 header {
 background-color: azure;
 display: flex;
 padding: 20px;
 justify-content: center;
 }
+
 header nav{
 margin-left: auto;
 }
@@ -21,6 +22,9 @@ nav a{
 margin: 0 10px;
 font-size: 1.8em !important;
 }
+/* End of header and nav bar styling */
+
+/* Footer styling */
 footer{
 background-color: azure;
 display: flex;
@@ -30,13 +34,16 @@ justify-content: center
 footer a{
 margin: 0 10px;
 }
+/* End of footer styling */
 
+/* brewmasters container styling */
 .container{
 display: flex;
 flex-direction: column;
 width: 500px;
 
 }
+/* End of brewmaster container styling */
 
 /* start of buy beer */
 .beer-card{
@@ -155,14 +162,18 @@ flex-wrap: wrap;
   /* background-color:azure; */
 }
 
+/* Start of nav bar styling */
 .navbar {
   justify-content: center;
   font: 200;
 }
+/* End of nav bar styling */
 
+/* Start of home page styling */
 #home-page {
   justify-content: center;
 }
+/* End of home page styling */
 
 /* Events cards image styling */
 .events-img {
@@ -172,17 +183,22 @@ flex-wrap: wrap;
 }
 /* End of events cards image styling */
 
+/* Start of form styling */
 form {
   background-color: bisque;
   width: 40%;
   text-align: center;
 }
+/* End of form styling */
 
+/* Start of carousel styling */
 .carousel-item {
   height: 400px;
   overflow: hidden;
   width: 100%;
   }
+
   .carousel-item img {
   width: 100%;
   }
+/* End of carousel styling */
